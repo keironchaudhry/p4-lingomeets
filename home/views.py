@@ -8,4 +8,4 @@ class HomeView(generic.TemplateView):
     """
     View for the landing page template of website
     """
-    template_name = 'base.html'
+    template_name = 'index.html'
