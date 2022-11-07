@@ -4,8 +4,8 @@ from django.views import generic
 # Create your views here.
 
 
-class HomeView(generic.TemplateView):
+class PastEvents(generic.TemplateView):
     """
     View for the landing page template of website
     """
-    template_name = 'base.html'
+    template_name = 'past_events.html'

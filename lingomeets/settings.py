@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'event',
+    'home',
 ]
 
 SITE_ID = 1
