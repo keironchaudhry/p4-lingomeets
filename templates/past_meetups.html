@@ -3,4 +3,18 @@
 
 past Meet-Ups
 
+{% for event in event_list %}
+
+<div>
+
+{{ event.title }}
+{{ event.destination }}
+{{ event.date }}
+
+<button>View more</button>
+
+</div>
+
+{% endfor %}
+
 {% endblock %}
