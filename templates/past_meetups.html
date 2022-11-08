@@ -1,17 +1,24 @@
-{% extends 'base.html' %}
-{% block content %}
-
-past Meet-Ups
+{% extends 'base.html' %} {% block content %}
 
 {% for event in event_list %}
 
-<div>
+<div class="container-fluid text-center">
 
-{{ event.title }}
-{{ event.destination }}
-{{ event.date }}
+    <!-- Event Title -->
+    <div>{{ event.title }}</div>
 
-<button>View more</button>
+    <!-- Event Image -->
+    <div class="container col-md-6">
+        <img src="{{ event.image.url }}" class="img-fluid rounded-circle" alt="Event Image">
+    </div>
+
+    <!-- Event Date -->
+    <div>Date of Event: {{ event.date }}</div>
+
+    <!-- 'View More' Button -->
+    <div>
+        <a class="btn btn-primary">View more</a>
+    </div>
 
 </div>
 
