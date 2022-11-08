@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
@@ -38,7 +39,7 @@ class Event(models.Model):
     )
     attendees = models.ManyToManyField(
         User,
-        related_name='attendee(s)',
+        related_name='attendees',
         blank=True
     )
     created_on = models.DateTimeField(
@@ -47,3 +48,6 @@ class Event(models.Model):
 
     class Meta:
         ordering = ['-created_on']
+
+    def __str__(self):
+        return self.title
