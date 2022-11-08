@@ -3,11 +3,24 @@
 <div class="container-fluid">
     <div class="row">
 
-        {{ event.destination }}
+        <div class="text-center">
 
-        {{ event.price }}
+            <!-- Event Title -->
+            <h2>{{ event.destination }}</h2>
+        
+            <h4>Price: {{ event.price }}.00€</h4>
 
-        {{ event.description }}
+            <!-- Event Image -->
+            <div class="container col-md-8">
+                <img src="{{ event.image.url }}" class="img-fluid rounded-circle" alt="Event Image">
+            </div>
+
+            <!-- Event Description -->
+            <div>
+                <p>{{ event.description }}</p>
+            </div>
+            
+        </div>
 
     </div>
 </div>
