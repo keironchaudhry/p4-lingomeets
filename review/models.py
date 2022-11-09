@@ -8,6 +8,14 @@ class Review(models.Model):
     Review database model for reviews
     made by users in Lingomeets website
     """
+    SCORE = (
+        (1, 'One Star'),
+        (2, 'Two Stars'),
+        (3, 'Three Stars'),
+        (4, 'Four Stars'),
+        (5, 'Five Stars'),
+    )
+
     event = models.ForeignKey(
         Event,
         on_delete=models.CASCADE,
