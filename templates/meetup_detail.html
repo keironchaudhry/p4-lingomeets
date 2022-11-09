@@ -36,9 +36,9 @@
 
     {% for review in reviews %}
 
-    {{ review.user }}
-    {{ review.created_on }}
-    {{ review.content }}
+    <div>{{ review.user }}, {{ review.created_at }}</div>
+    <div>{{ review.content }}</div>
+    <div>{{ review.rating }}</div>
 
     {% endfor %}
 
@@ -51,9 +51,8 @@
         <form method="post" class="form-group">
             <strong>{{ review_form | crispy }}</strong>
             {% csrf_token %}
-            <button type="submit" class="btn btn-primary btn-lg btn-submit">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-
     </div>
 
 </section>

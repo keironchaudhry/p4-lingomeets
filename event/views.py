@@ -6,7 +6,6 @@ from review.forms import ReviewForm
 from .models import Event
 
 
-
 class PastMeetups(generic.ListView):
     """
     View for past meetups in website
@@ -44,10 +43,10 @@ class MeetupView(View):
                 'review_form': review_form
             }
         )
- 
+
     def post(self, request, slug, *args, **kwargs):
         """
-        POST method to post reviews
+        POST method for users to post reviews
         """
         queryset = Event.objects
         event = get_object_or_404(queryset, slug=slug)

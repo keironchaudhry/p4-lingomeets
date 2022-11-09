@@ -25,12 +25,12 @@
 
     <!-- Navigation bar header -->
 
-    <nav class="navbar bg-light">
+    <nav class="navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">LingoMeets</a>
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'past_meetups' %}">Past Events</a>
@@ -85,6 +85,9 @@
         </footer>
 
     </div>
+
+    <!-- Font Awesome Link -->
+    <script src="https://kit.fontawesome.com/2e88571a5d.js" crossorigin="anonymous"></script>
 
 </body>
 
