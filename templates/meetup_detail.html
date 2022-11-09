@@ -25,5 +25,20 @@
     </div>
 </div>
 
+<section class="container-fluid">
+    <h3>
+        Reviews:
+    </h3>
+
+    {% for review in reviews %}
+
+    {{ review.user }}
+    {{ review.created_on }}
+    {{ review.content }}
+
+    {% endfor %}
+
+</section>
+
 
 {% endblock %}
