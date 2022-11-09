@@ -43,3 +43,9 @@ class Review(models.Model):
     is_admin_approved = models.BooleanField(
         default=False
     )
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f'Review: {self.content} by {self.user}'
