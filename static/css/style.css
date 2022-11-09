@@ -10,3 +10,21 @@ body {
 .navbar {
     background-color: #07889B;
 }
+
+.navbar i {
+    color: #FFA500;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #FFE4E1;
+    letter-spacing: 3px;
+}
+
+#logo {
+    letter-spacing: 5px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #FFE4E1;
+    margin-left: 25px;
+}

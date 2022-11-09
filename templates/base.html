@@ -27,7 +27,12 @@
 
     <nav class="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">LingoMeets</a>
+
+            <!-- NavBar Logo -->
+            <a class="navbar-brand" href="{% url 'home' %}" id="logo">
+                LingoMeets <i class="fa-sharp fa-solid fa-language"></i>
+            </a>
+
             <ul class="nav justify-content-end">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}">Home</a>
