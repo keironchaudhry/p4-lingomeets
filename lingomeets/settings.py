@@ -33,6 +33,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['lingomeets.herokuapp.com', 'localhost']
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 # Application definition
 
