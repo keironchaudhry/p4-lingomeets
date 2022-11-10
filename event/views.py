@@ -1,6 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
+from django.contrib import messages
 from review.models import Review
 from review.forms import ReviewForm
 from .models import Event
@@ -64,6 +65,10 @@ class MeetupView(View):
                 review.event = event
                 review.user = request.user
                 review.save()
+                messages.info(
+                    request,
+                    'Your review is being approved. Thank you.'
+                )
                 return HttpResponseRedirect(
                     reverse(
                         'meetup_detail.html',
