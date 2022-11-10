@@ -9,7 +9,7 @@
 
             <!-- Event Title -->
             <h2>{{ event.destination }}</h2>
-        
+
             <h4>Price: {{ event.price }}.00€</h4>
 
             <!-- Event Image -->
@@ -21,13 +21,23 @@
             <div>
                 <p>{{ event.description }}</p>
             </div>
-            
+
         </div>
 
     </div>
 </div>
 
 <section class="container-fluid">
+
+    {% if messages %}
+    {% for message in messages %}
+
+    <div>
+        <p>{{ message }}</p>
+    </div>
+
+    {% endfor %}
+    {% endif %}
 
     <!-- User Reviews -->
     <h3>

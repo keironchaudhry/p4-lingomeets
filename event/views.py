@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
 from review.models import Review
@@ -55,7 +55,7 @@ class MeetupView(View):
         review = Review.objects
         reviews = review.filter(is_admin_approved=True)
         reviewed = False
-        review_form = ReviewForm()
+        review_form = ReviewForm(data=request.POST)
 
         if (not reviewed):
             if review_form.is_valid():
@@ -70,9 +70,7 @@ class MeetupView(View):
                     'Your review is being approved. Thank you.'
                 )
                 return HttpResponseRedirect(
-                    reverse(
-                        'meetup_detail.html',
-                        args=[slug])
+                    reverse('meetup_detail', args=[slug])
                 )
             else:
                 return render(
