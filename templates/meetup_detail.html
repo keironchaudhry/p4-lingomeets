@@ -42,6 +42,8 @@
 
     {% endfor %}
 
+    {% if user.is_authenticated %}
+
     <!-- Crispy Form For Review -->
     <div>
         <h3>Leave a review:</h3>
@@ -54,6 +56,8 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+
+    {% endif %}
 
 </section>
 
