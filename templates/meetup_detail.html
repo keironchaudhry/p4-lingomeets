@@ -50,6 +50,14 @@
     <div>{{ review.content }}</div>
     <div>{{ review.rating }}</div>
 
+    {% if review.user == request.user %}
+
+    <div>
+        <a class="btn btn-primary">Edit</a>
+    </div>
+
+    {% endif %}
+
     {% endfor %}
 
     {% if user.is_authenticated %}
