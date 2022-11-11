@@ -51,3 +51,6 @@ class Profile(models.Model):
         auto_now=True,
         null=True
     )
+
+    def __str__(self) -> str:
+        return f'{self.user}'
