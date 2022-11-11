@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'event',
     'home',
     'review',
+    'profile',
 ]
 
 SITE_ID = 1
