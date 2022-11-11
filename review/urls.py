@@ -12,4 +12,9 @@ urlpatterns = [
         login_required(views.EditReview.as_view()),
         name='edit_review'
     ),
+    path(
+        'delete_review/<slug:slug>',
+        login_required(views.DeleteReview.as_view()),
+        name='delete_review'
+    ),
 ]
