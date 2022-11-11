@@ -8,4 +8,9 @@ urlpatterns = [
         login_required(views.UserProfile.as_view()),
         name='user_profile'
     ),
+    path(
+        'user_settings/',
+        login_required(views.UserSettings.as_view()),
+        name='user_settings'
+    ),
 ]
