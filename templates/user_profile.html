@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for profile in profile_list %}
+
+<h3>Profile</h3>
+
+<div>{{ profile.first_name }}</div>
+<div>{{ profile.last_name }}</div>
+<div>{{ profile.bio }}</div>
+
+{% endfor %}
+
+{% endblock %}
