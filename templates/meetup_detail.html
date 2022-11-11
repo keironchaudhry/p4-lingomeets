@@ -53,7 +53,7 @@
     {% if review.user == request.user %}
 
     <div>
-        <a class="btn btn-primary">Edit</a>
+        <a class="btn btn-primary" href="{% url 'edit_review' review.id %}">Edit</a>
     </div>
 
     {% endif %}
