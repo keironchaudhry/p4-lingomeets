@@ -1,12 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views import generic, View
+from .forms import ProfileForm
 from .models import Profile
 
 
 class UserProfile(generic.ListView):
     """
-    View for displaying user profile
+    View for displaying user
+    profile featured in Lingomeets
     """
     model = Profile
     queryset = Profile.objects.all()
@@ -18,8 +20,11 @@ class UserSettings(View):
     View for user settings used
     to modify user profile information
     """
+    def dispatch(self, request, *args, **kwargs):
+        self.profile, __ = Profile.objects.get_or_create(user=request.user)
+        return super(UserSettings, self).dispatch(request, *args, **kwargs)
+
     def get(self, request):
-        self.profile = Profile.objects.get_or_create(user=request.user)
         context = {'profile': self.profile}
         return render(request, 'user_settings.html', context)
 
