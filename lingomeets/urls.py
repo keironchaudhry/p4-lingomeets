@@ -40,4 +40,9 @@ urlpatterns = [
         include('review.urls'),
         name='review.urls'
     ),
+    path(
+        'user_profile/',
+        include('user_profile.urls'),
+        name='user_profile.urls'
+    ),
 ]
