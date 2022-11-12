@@ -54,3 +54,7 @@ class Profile(models.Model):
 
     def __str__(self) -> str:
         return f'{self.user}'
+
+    @property
+    def get_avatar(self):
+        return self.avatar.url

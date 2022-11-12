@@ -8,6 +8,9 @@
 <div>{{ profile.first_name }}</div>
 <div>{{ profile.last_name }}</div>
 <div>{{ profile.bio }}</div>
+<div>
+    <img src="{{ profile.avatar.url }}" alt="Profile Picture">
+</div>
 
 {% endfor %}
 
