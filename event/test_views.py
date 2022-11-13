@@ -61,3 +61,25 @@ class TestEventViews(TestCase):
         )
         self.assertEqual(review.content, 'Test content')
         self.assertEqual(review.rating, 3)
+
+    def test_review_post_method_for_user_review(self):
+        self.client.login(
+            username='test_user',
+            password='test_password'
+        )
+        event = Event.objects.get(
+            title='Dummy Event title'
+        )
+        user = User.objects.get(
+            username='test_user'
+        )
+        review = Review.objects.create(
+            event=event,
+            user=user,
+            content='Test content',
+            rating=3
+        )
+        response = self.client.post(
+            f'/event/{event.slug}/', {'content': 'Test content', 'rating': 3}
+        )
+        self.assertRedirects(response, f'/event/{event.slug}/')
