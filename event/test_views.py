@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Event, User
+from review.models import Review
 import datetime
 
 
@@ -34,3 +35,15 @@ class TestEventViews(TestCase):
         response = self.client.get(f'/event/{event.slug}/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'meetup_detail.html')
+
+    def test_user_can_create_a_review(self):
+        self.client.login(
+            username='test_user',
+            password='test_password'
+        )
+        event = Event.objects.get(title='Dummy Event title')
+        user = User.objects.get(username='test_user')
+        review = Review.objects.create(
+            event=event, user=user, content='Test content'
+        )
+        self.assertEqual(review.rating, 3)
