@@ -50,3 +50,15 @@ header {
     transition: 70ms;
     color: #A9A9A9;
 }
+
+/* Landing Page Customisation */
+
+.small-logo {
+    letter-spacing: 5px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.small-logo i {
+    color: #FFA500;
+}
