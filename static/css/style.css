@@ -5,6 +5,12 @@ body {
     font-family: Lora, sans-serif;
 }
 
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+
 /* Navigation bar */
 
 .navbar {
@@ -15,10 +21,20 @@ body {
     color: #FFA500;
 }
 
+.navbar ul {
+    margin-right: 25px;
+}
+
 .nav-item a {
     text-decoration: none;
     color: #FFE4E1;
     letter-spacing: 3px;
+}
+
+.nav-item a:hover {
+    transform: scale(1.095);
+    transition: 50ms;
+    color: #A9A9A9;
 }
 
 #logo {
@@ -27,4 +43,10 @@ body {
     font-weight: 700;
     color: #FFE4E1;
     margin-left: 25px;
+}
+
+#logo:hover {
+    transform: scale(1.075);
+    transition: 70ms;
+    color: #A9A9A9;
 }
