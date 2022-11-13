@@ -3,6 +3,7 @@ from .models import Review, User
 from event.models import Event
 import datetime
 
+
 class TestReviewModel(TestCase):
 
     def setUp(self):
@@ -24,11 +25,7 @@ class TestReviewModel(TestCase):
             password='test_password'
         )
 
-    def test_review_str(self):
-        """
-        Test return value string method
-        for Review class in models
-        """
+    def test_review_model_method_returns_string(self):
         self.client.login(
             username='test_user',
             password='test_password'
