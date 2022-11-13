@@ -30,10 +30,16 @@ class TestReviewModel(TestCase):
             username='test_user',
             password='test_password'
         )
-        event = Event.objects.get(title='Dummy Event title')
-        user = User.objects.get(username='test_user')
+        event = Event.objects.get(
+            title='Dummy Event title'
+        )
+        user = User.objects.get(
+            username='test_user'
+        )
         review = Review.objects.create(
-            event=event, user=user, content='Test content'
+            event=event,
+            user=user,
+            content='Test content'
         )
         self.assertEqual(
             str(review), 'Review: Test content by test_user'
