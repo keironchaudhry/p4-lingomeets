@@ -63,3 +63,7 @@ header {
 .small-logo i {
     color: #FFA500;
 }
+
+.hero-image {
+    border-radius: 200px;
+}
