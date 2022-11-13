@@ -12,7 +12,7 @@ class TestProfileViews(TestCase):
 
     def setUp(self):
         """
-        Creates a user object and 
+        Creates a user object and
         profile object for testing
         """
         User.objects.create_user(
