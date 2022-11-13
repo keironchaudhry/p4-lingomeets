@@ -78,3 +78,26 @@ class TestReviewViews(TestCase):
         )
         self.assertEqual(review.content, 'Edited Test content')
         self.assertEqual(review.rating, 5)
+
+    def test_user_can_delete_review(self):
+        user = self.client.login(
+            username='test_user',
+            password='test_password'
+        )
+        event = Event.objects.get(
+            title='Dummy Event title'
+        )
+        self.client.post(
+            f'/event/{event.slug}/',
+            {'content': 'Test content', 'rating': 3}
+        )
+        review = Review.objects.get(
+            content='Test content'
+        )
+        self.assertEqual(review.content, 'Test content')
+        response = self.client.post(
+            f'/review/delete_review/{event.slug}'
+        )
+        self.assertRedirects(response, f'/event/{event.slug}/')
+        new_review = Review.objects.all()
+        self.assertEqual(len(new_review), 0)
