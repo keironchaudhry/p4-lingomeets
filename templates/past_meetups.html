@@ -5,20 +5,28 @@
 <div class="container-fluid text-center">
 
     <!-- Event Title -->
-    <div>{{ event.title }}</div>
+    <div class="text-center mt-3">
+        <h3><strong>LingoMeets Meet-Up: {{ event.title }}</strong></h3>
+    </div>
+
+    <hr>
 
     <!-- Event Image -->
-    <div class="container col-md-6">
+    <div class="container col-md-6 mt-3">
         <img src="{{ event.image.url }}" class="img-fluid rounded-circle" alt="Event Image">
     </div>
 
     <!-- Event Date -->
-    <div>Date of Event: {{ event.date }}</div>
+    <div class="mt-2">
+        <p><strong>Date of Event: {{ event.date }}</strong></p>
+    </div>
 
     <!-- 'View More' Button -->
     <div>
         <a href="{% url 'meetup_detail' event.slug %}" class="btn btn-primary">View more</a>
     </div>
+
+    <hr>
 
 </div>
 
