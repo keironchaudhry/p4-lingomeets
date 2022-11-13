@@ -5,6 +5,14 @@
 
 <h3>Profile</h3>
 
+{% if messages %}
+{% for message in messages %}
+
+{{ message.message }}
+
+{% endfor %}
+{% endif %}
+
 <div>{{ profile.first_name }}</div>
 <div>{{ profile.last_name }}</div>
 <div>{{ profile.bio }}</div>
