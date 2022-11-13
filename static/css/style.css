@@ -86,3 +86,17 @@ header {
     text-decoration: underline;
     color: #07889B;
 }
+
+/* Past Meetup Page Customisation */
+
+.btn-secondary {
+    background-color: #07889B;
+    font-size: 17.5px;
+    color: #fafafa;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.1);
+    transition: 50ms;
+    letter-spacing: 1px;
+}
