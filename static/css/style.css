@@ -67,3 +67,11 @@ header {
 .hero-image {
     border-radius: 200px;
 }
+
+.landing-page-description p {
+    font-size: 25px;
+}
+
+.landing-page-description i {
+    color: #FFA500;
+}
