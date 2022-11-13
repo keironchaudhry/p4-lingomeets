@@ -26,13 +26,19 @@ class TestEventViews(TestCase):
         )
 
     def test_past_meetups_page_returns_200(self):
-        response = self.client.get('/event/past_meetups/')
+        response = self.client.get(
+            '/event/past_meetups/'
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'past_meetups.html')
 
     def test_meetup_view_get_method(self):
-        event = Event.objects.get(slug='dummy-event-title')
-        response = self.client.get(f'/event/{event.slug}/')
+        event = Event.objects.get(
+            slug='dummy-event-title'
+        )
+        response = self.client.get(
+            f'/event/{event.slug}/'
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'meetup_detail.html')
 
@@ -41,9 +47,17 @@ class TestEventViews(TestCase):
             username='test_user',
             password='test_password'
         )
-        event = Event.objects.get(title='Dummy Event title')
-        user = User.objects.get(username='test_user')
-        review = Review.objects.create(
-            event=event, user=user, content='Test content'
+        event = Event.objects.get(
+            title='Dummy Event title'
         )
+        user = User.objects.get(
+            username='test_user'
+        )
+        review = Review.objects.create(
+            event=event,
+            user=user,
+            content='Test content',
+            rating=3
+        )
+        self.assertEqual(review.content, 'Test content')
         self.assertEqual(review.rating, 3)
