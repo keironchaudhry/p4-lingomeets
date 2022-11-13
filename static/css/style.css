@@ -75,3 +75,14 @@ header {
 .landing-page-description i {
     color: #FFA500;
 }
+
+.sign-up-links a {
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+.sign-up-links a:hover {
+    text-decoration: underline;
+    color: #07889B;
+}

@@ -51,4 +51,19 @@
 
 </div>
 
+{% if not user.is_authenticated %}
+
+<div class="container-fluid text-center">
+
+    <!-- Sign In/Login -->
+    <div class="landing-page-description sign-up-links">
+        <p>Come join us by <a href="{% url 'account_signup' %}"><strong>signing up now,</strong></a> 
+            or <a href="{% url 'account_login' %}"><strong>log-in!</strong></a>
+        </p>
+    </div>
+
+</div>
+
+{% endif %}
+
 {% endblock %}
