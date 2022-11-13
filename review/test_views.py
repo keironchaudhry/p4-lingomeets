@@ -43,7 +43,8 @@ class TestReviewViews(TestCase):
             rating=3
         )
         response = self.client.post(
-            f'/event/{event.slug}/', {'content': 'Test content', 'rating': 3}
+            f'/event/{event.slug}/',
+            {'content': 'Test content', 'rating': 3}
         )
         self.assertRedirects(response, f'/event/{event.slug}/')
 

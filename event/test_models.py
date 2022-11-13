@@ -24,10 +24,7 @@ class TestEventModel(TestCase):
             password='test_password'
         )
 
-    def test_event_str_value(self):
-        """
-        Tests return value for string method in Event class model
-        """
+    def test_event_model_string_method_returns_string(self):
         event = Event.objects.get(title='Dummy Event title')
         self.assertEqual(
             str(event), 'Dummy Event title'
