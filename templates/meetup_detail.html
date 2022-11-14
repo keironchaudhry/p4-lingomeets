@@ -78,7 +78,15 @@
         </div>
 
         <!-- User Rating -->
-        <div>Score: {{ review.rating }}</div>
+        <h6>
+            <u>Score:</u>
+        </h6>
+
+        <p class="mb-5">
+            {% for x in review.get_range %}
+            <i class="fa-solid fa-star"></i>
+            {% endfor %}
+        </p>
 
     </div>
 

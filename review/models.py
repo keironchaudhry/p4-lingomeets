@@ -49,3 +49,6 @@ class Review(models.Model):
 
     def __str__(self):
         return f'Review: {self.content} by {self.user}'
+
+    def get_range(self):
+        return range(self.rating)
