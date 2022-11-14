@@ -10,30 +10,15 @@ Python (+Django Framework), JavaScript, HTML5 and CSS3.
 
 Deployed version of this project can be found [here]().
 
-# **Purpose of project**
-
-LingoMeets is a website application designed specifically for language-learning enthusiasts who wish to join like-minded language enthusiasts on international meet-ups, mainly to practise their abilities and skills with others and also for touristic reasons.
-
-Target audience: language-learning enthusiasts and individuals that want to network with others internationally as part of a wider community.
-
-This is project is the fourth in a series of five milestone projects which are to be completed in order to receive my diploma from Code Institute.
-
-* **Required technologies are:**
-
-To be added
-
-Deployed version of project:
-
 
 ## **Table of content**
 
-* [UX]()
-* [User Demographic]()
-* [User Stories]()
-* [Admin Stories]()
-* [First-time Visitor Stories]()
-* [Project Requirements]()
-* [Design diagram]()
+* [Project Purpose](#purpose-of-project)
+* [UX](#ux)
+    * [Project Scope](#project-scope)
+    * [Strategy](#strategy)
+    * [User Stories](#user-stories)
+* [Design]()
 * [Features]()
 * [Features Left to Implement]()
 * [Technologies and libraries used]()
@@ -46,13 +31,59 @@ Deployed version of project:
 * [Credits]()
 
 
+# **Project Purpose**
+
+LingoMeets is a website application designed specifically for language-learning enthusiasts who wish to join like-minded language enthusiasts on international meet-ups, mainly to practise their abilities and skills with others and also for touristic reasons.
+
+Target audience: language-learning enthusiasts and individuals that want to network with others internationally as part of a wider community.
+
+This is project is the fourth in a series of five milestone projects which are to be completed in order to receive my diploma from Code Institute.
+
+
 # **UX** 
 
+## **Project Scope**
 
-## **User Demographic**
+* **Functionality**
 
-To be added
+    * To be able to sign-up using an email address and secure password
+    * To be able to login and logout of an account
+    * To be able to create/view/edit/delete an event as site admin
+    * To be able to view past events
+    * To be able to view past event information and other user reviews
+    * To be able to create/view/edit/delete reviews.
+    * To be able to approve reviews as site admin.
+    * To be able to create/view/edit/delete user profile information as a user
+    * To be able to store and retrieve avatar image
+    * To be able to register to/deregister from an event as a user
+    * To be able to reset password
+    * To be able to change password
+    * To handle errors: page 404 'Not Found', page 500 'Internal Server Error' and page 401 'Unauthorised'.
 
+* **Content Requirements**
+
+    * Clear, unambiguous and concise information on how to use the website
+    * Event information and details for users
+    * Forms where user input is required
+    * Engaging headings and content to guide user throughout website
+    * Responsive and interactive website that responds to user
+    * Images across website to provide visually appealing content
+
+## **Strategy**
+
+Learning languages can be an arduous task, and to be able maintain several languages even more so. It is often hard to find other learners who have the same level and learning requirements as you, and so as part of the inspiration for Lingomeets, this website was created to engage learners who can meet up and network with others in international events for several days for a cost, which covers accomodation and day-trips.
+
+* **Site-owner goal** 
+
+    * To provide a platform for users who are looking to network
+    * To provide a platform that allows users to create a profile
+    * To create a viable product that can be further developed with additional features
+
+* **User goals**
+
+    * To access a user-friendly application across multiple devices
+    * To network with other likeminded users
+    * To attend as many meet-up events as possible
 
 ## **User Stories**
 
