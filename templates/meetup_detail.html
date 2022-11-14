@@ -8,17 +8,23 @@
         <div class="text-center">
 
             <!-- Event Title -->
-            <h2>{{ event.destination }}</h2>
+            <h2 class="mt-3">
+                <strong>LingoMeets Meet-Up: <u>{{ event.destination }}</u>
+                </strong>
+            </h2>
 
-            <h4>Price: {{ event.price }}.00€</h4>
+            <h4 class="mt-3">
+                <strong><u>Price:</u> {{ event.price }}.00€
+                </strong>
+            </h4>
 
             <!-- Event Image -->
-            <div class="container col-md-8">
+            <div class="container col-md-8 mt-3">
                 <img src="{{ event.image.url }}" class="img-fluid rounded-circle" alt="Event Image">
             </div>
 
             <!-- Event Description -->
-            <div>
+            <div class="event-description">
                 <p>{{ event.description }}</p>
             </div>
 
@@ -29,26 +35,50 @@
 
 <section class="container-fluid">
 
+    <!-- User Reviews -->
+    <h3 class="text-center">
+        <strong><u>Reviews:</u></strong>
+    </h3>
+
     {% if messages %}
     {% for message in messages %}
 
-    <div>
-        <p>{{ message }}</p>
+    <!-- Review Pending Message -->
+    <div class="text-center h4 mt-3">
+        <p>
+            <strong>{{ message }}</strong>
+        </p>
     </div>
 
     {% endfor %}
     {% endif %}
 
-    <!-- User Reviews -->
-    <h3>
-        Reviews:
-    </h3>
-
     {% for review in reviews %}
 
-    <div>{{ review.user }}, {{ review.created_at }}</div>
-    <div>{{ review.content }}</div>
-    <div>{{ review.rating }}</div>
+    <div class="text-center mt-4 mb-4">
+
+        <!-- User Name And Submit Date -->
+        <p class="font-weight-bold">
+            <u>@{{ review.user }}
+
+                <span class=" text-muted font-weight-normal">
+                    {{ review.created_at }}
+                </span> wrote:
+
+            </u>
+        </p>
+
+        <!-- User Review -->
+        <div class="review-content">
+            <p>
+                {{ review.content | linebreaks }}
+            </p>
+        </div>
+
+        <!-- User Rating -->
+        <div>Score: {{ review.rating }}</div>
+
+    </div>
 
     {% if review.user == request.user %}
 
@@ -56,13 +86,9 @@
         <div class="col text-end">
             <a class="btn btn-primary" href="{% url 'edit_review' review.id %}">Edit</a>
         </div>
-        <!-- <div class="col text-start">
-            <button type="button" class="btn btn-primary">Delete</button>
-        </div> -->
         <form action="{% url 'delete_review' event.slug %}" method="post">
             {% csrf_token %}
-            <button type="submit" name="event_id" value="{{ event.slug }}"
-                class="btn btn-danger btn-m">Delete</button>
+            <button type="submit" name="event_id" value="{{ event.slug }}" class="btn btn-danger btn-m">Delete</button>
         </form>
     </div>
 
@@ -72,18 +98,30 @@
 
     {% if user.is_authenticated %}
 
-    <!-- Crispy Form For Review -->
-    <div>
-        <h3>Leave a review:</h3>
-    </div>
+    <!-- Leave A Review Section -->
 
-    <div class="form-group">
-        <form method="post" class="form-group">
-            <strong>{{ review_form | crispy }}</strong>
-            {% csrf_token %}
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+    <section class="review-box">
+
+        <!-- Title -->
+        <h3>
+            <strong><u>Leave a review:</u></strong>
+        </h3>
+
+        <!-- User Username -->
+        <h5>
+            <strong><em>Posting as: @{{ user.username }}</em></strong>
+        </h5>
+
+        <!-- Crispy Form For Review -->
+        <div class="form-group">
+            <form method="post" class="form-group">
+                <strong>{{ review_form | crispy }}</strong>
+                {% csrf_token %}
+                <button type="submit" class="btn btn-secondary mt-3">Submit</button>
+            </form>
+        </div>
+
+    </section>
 
     {% endif %}
 
