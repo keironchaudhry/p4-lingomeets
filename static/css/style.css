@@ -63,6 +63,24 @@ header {
     color: #A9A9A9;
 }
 
+/* Footer Customisation */
+
+#footer-logo {
+    letter-spacing: 5px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#footer-logo i {
+    color: #FFA500;
+}
+
+#footer-logo a:hover {
+    color: #A9A9A9;
+    letter-spacing: 6px;
+    transition: 50ms;
+}
+
 /* Landing Page Customisation */
 
 .small-logo {
