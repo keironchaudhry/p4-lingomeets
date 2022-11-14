@@ -88,7 +88,6 @@ header {
 }
 
 .sign-up-links a {
-    font-size: 25px;
     text-decoration: none;
     color: black;
 }
@@ -116,10 +115,4 @@ header {
 
 .sign-up-font p {
     font-size: 20px;
-}
-
-.sign-up-links a {
-    font-size: 20px;
-    text-decoration: none;
-    color: black;
 }
