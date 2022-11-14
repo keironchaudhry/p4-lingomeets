@@ -1,9 +1,20 @@
 # **LingoMeets**
 
+**LingoMeets is a language-learning meet-up website for language-learning enthusiasts with full user and admin functionality.**
+
+This application was built using [GitHub](https://github.com/) and deployed to [Heroku](https://id.heroku.com/login).
+
+<u>Required technologies:</u>
+
+Python (+Django Framework), JavaScript, HTML5 and CSS3.
+
+Deployed version of this project can be found [here]().
 
 # **Purpose of project**
 
-Language Meet-Up Site/Blog
+LingoMeets is a website application designed specifically for language-learning enthusiasts who wish to join like-minded language enthusiasts on international meet-ups, mainly to practise their abilities and skills with others and also for touristic reasons.
+
+Target audience: language-learning enthusiasts and individuals that want to network with others internationally as part of a wider community.
 
 This is project is the fourth in a series of five milestone projects which are to be completed in order to receive my diploma from Code Institute.
 
