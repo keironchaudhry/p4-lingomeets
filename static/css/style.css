@@ -81,6 +81,32 @@ header {
     transition: 50ms;
 }
 
+.social-media-icons i:hover {
+    transform: scale(1.6);
+    transition: 50ms;
+    color: blue;
+}
+
+.quick-links p:hover {
+    transform: scale(1.1);
+    transition: 50ms;
+    color: #07889B;
+}
+
+#copyright-logo a {
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+#copyright-logo i {
+    color: #FFA500;
+}
+
+#copyright-logo a:hover {
+    letter-spacing: 2px;
+    transition: 50ms;
+}
+
 /* Landing Page Customisation */
 
 .small-logo {
