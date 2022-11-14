@@ -82,7 +82,7 @@
             <u>Score:</u>
         </h6>
 
-        <p class="mb-5">
+        <p>
             {% for x in review.get_range %}
             <i class="fa-solid fa-star"></i>
             {% endfor %}
@@ -92,14 +92,18 @@
 
     {% if review.user == request.user %}
 
+    <!-- Edit And Delete Buttons -->
     <div class="row">
         <div class="col text-end">
-            <a class="btn btn-primary" href="{% url 'edit_review' review.id %}">Edit</a>
+            <a class="btn btn-secondary" href="{% url 'edit_review' review.id %}">Edit</a>
         </div>
-        <form action="{% url 'delete_review' event.slug %}" method="post">
-            {% csrf_token %}
-            <button type="submit" name="event_id" value="{{ event.slug }}" class="btn btn-danger btn-m">Delete</button>
-        </form>
+        <div class="col text-start">
+            <form action="{% url 'delete_review' event.slug %}" method="post">
+                {% csrf_token %}
+                <button type="submit" name="event_id" value="{{ event.slug }}"
+                    class="btn btn-danger btn-delete">Delete</button>
+            </form>
+        </div>
     </div>
 
     {% endif %}

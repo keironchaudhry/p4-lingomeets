@@ -171,6 +171,18 @@ header {
     font-size: 15px;
 }
 
+.btn-delete {
+    background-color: #07889B;
+    font-size: 17.5px;
+    color: #fafafa;
+}
+
+.btn-delete:hover {
+    transform: scale(1.1);
+    transition: 50ms;
+    letter-spacing: 1px;
+}
+
 /* AllAuth Template Customisation(s) */
 
 .sign-up-font p {
