@@ -100,3 +100,15 @@ header {
     transition: 50ms;
     letter-spacing: 1px;
 }
+
+/* Sign Up Page Customisation */
+
+.sign-up-font p {
+    font-size: 20px;
+}
+
+.sign-up-links a {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
