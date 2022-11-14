@@ -69,38 +69,112 @@
 
     <!-- Footer -->
 
-    <div class="container my-5">
+    <footer class="text-center text-lg-start container-fluid">
 
-        <footer class="text-center text-white" style="background-color: #f1f1f1;">
-            <!-- Grid container -->
-            <div class="container pt-4">
-                <!-- Section: Social media -->
-                <section class="mb-4">
-                    <!-- Facebook -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                        data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
-
-                    <!-- Twitter -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                        data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
-
-                    <!-- Instagram -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                        data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
-                </section>
-                <!-- Section: Social media -->
+        <!-- Footer Logo -->
+        <div class="text-center">
+            <div>
+                <a href="/">
+                    LingoMeets <i class="fa-sharp fa-solid fa-language"></i>
+                </a>
             </div>
-            <!-- Grid container -->
+        </div>
 
-            <!-- Copyright -->
-            <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2020 Copyright:
-                <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+
+                <!-- Social Media Content -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-center social-media-icons">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Follow Us
+                    </h6>
+                    <a href="https://www.facebook.com/" class="btn btn-link btn-floating btn-lg text-dark m-1">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/" class="btn btn-link btn-floating btn-lg text-dark m-1">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" class="btn btn-link btn-floating btn-lg text-dark m-1">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Timetable Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Our Timetable
+                    </h6>
+                    <p>Monday: 10:00 - 16:00</p>
+                    <p>Tuesday: 10:00 - 16:00</p>
+                    <p>Wednesday: 10:00 - 16:00</p>
+                    <p>Thursday: 10:00 - 16:00</p>
+                    <p>Friday: 10:00 - 16:00</p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 quick-links">
+                    <!-- Links Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Quick Links
+                    </h6>
+                    <p>
+                        <a href="{% url 'home' %}" class="text-reset">Home</a>
+                    </p>
+                    <p>
+                        <a href="{% url 'past_meetups' %}" class="text-reset">Past Meet-Ups</a>
+                    </p>
+                    {% if user.is_authenticated %}
+                    <p>
+                        <a href="{% url 'user_profile' %}" class="text-reset">Profile</a>
+                    </p>
+                    <p>
+                        <a href="{% url 'account_logout' %}" class="text-reset">Login</a>
+                    </p>
+                    {% else %}
+                    <p>
+                        <a href="{% url 'account_signup' %}" class="text-reset">Sign Up</a>
+                    </p>
+                    <p>
+                        <a href="{% url 'account_login' %}" class="text-reset">Login</a>
+                    </p>
+                    {% endif %}
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Contact Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">Contact us</h6>
+                    <p><i class="fas fa-home me-3 text-secondary"></i>Plaza de la Constitución, Málaga, 20000, ESP
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope me-3 text-secondary"></i>
+                        info@lingomeets.com
+                    </p>
+                    <p><i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>
+                    <p><i class="fas fa-print me-3 text-secondary"></i> + 01 234 567 89</p>
+                </div>
+                <!-- Grid column -->
+
             </div>
-            <!-- Copyright -->
-        </footer>
+            <!-- Grid row -->
+        </div>
 
-    </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+            © 2022 Copyright:
+            <a class="text-reset fw-bold" href="{% url 'home' %}">
+                LingoMeets <i class="fa-sharp fa-solid fa-language"></i>
+            </a>
+        </div>
+
+
+    </footer>
 
     <!-- Font Awesome Link -->
     <script src="https://kit.fontawesome.com/2e88571a5d.js" crossorigin="anonymous"></script>
