@@ -247,6 +247,10 @@ header {
     margin-top: 45px;
 }
 
+.profile-shadow {
+    box-shadow: rgba(0, 0, 0, 0.3) 0.5px 0.5px 3px;
+}
+
 /* AllAuth Template Customisation(s) */
 
 .sign-up-font p {
