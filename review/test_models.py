@@ -44,3 +44,24 @@ class TestReviewModel(TestCase):
         self.assertEqual(
             str(review), 'Review: Test content by test_user'
         )
+
+    def test_get_range_method_returns_rating(self):
+        self.client.login(
+            username='test_user',
+            password='test_password'
+        )
+        event = Event.objects.get(
+            title='Dummy Event title'
+        )
+        user = User.objects.get(
+            username='test_user'
+        )
+        review = Review.objects.create(
+            event=event,
+            user=user,
+            rating=3,
+            content='Test content'
+        )
+        self.assertEqual(review.rating, 3)
+        get_range = range(review.rating)
+        self.assertEqual(get_range, range(0, 3))
