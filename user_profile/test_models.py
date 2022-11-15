@@ -1,6 +1,7 @@
 from .models import Profile
 from django.test import TestCase
 from .models import Profile, User
+from datetime import date
 import datetime
 
 
@@ -36,3 +37,19 @@ class TestProfileModel(TestCase):
         self.assertEqual(
             str(profile), f'{profile}'
         )
+
+    def test_age_method_returns_age(self):
+        profile = Profile.objects.get(
+            birthday=datetime.date.today(),
+        )
+        self.assertEqual(profile.birthday, datetime.date.today())
+        today = date.today()
+        self.assertEqual(today, date.today())
+        age = today.year - profile.birthday.year - (
+            (
+                today.month, today.day
+            ) < (
+                profile.birthday.month, profile.birthday.day
+            )
+        )
+        self.assertEqual(age, 0)
