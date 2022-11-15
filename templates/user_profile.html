@@ -3,21 +3,36 @@
 
 {% for profile in profile_list %}
 
-<h3>Profile</h3>
+<div class="container card-container">
+    <div class="row">
 
-{% if messages %}
-{% for message in messages %}
+        <!-- User Profile Image  -->
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
 
-{{ message.message }}
+                <div class="card-body">
+                    <div class="account-settings">
+                        <div class="user-profile">
 
-{% endfor %}
-{% endif %}
+                            <!-- Profile Image -->
+                            <div class="user-avatar">
+                                <img src="{{ profile.get_avatar }}" class="rounded-circle border border-dark"
+                                    alt="User Profile Image">
+                            </div>
 
-<div>{{ profile.first_name }}</div>
-<div>{{ profile.last_name }}</div>
-<div>{{ profile.bio }}</div>
-<div>
-    <img src="{{ profile.avatar.url }}" alt="Profile Picture">
+                            <!-- Profile User And Residence -->
+                            <h5 class="user-name">
+                                @{{ profile.user }}
+                            </h5>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 </div>
 
 {% endfor %}
@@ -27,5 +42,13 @@
         Update profile
     </a>
 </div>
+
+{% if messages %}
+{% for message in messages %}
+
+{{ message.message }}
+
+{% endfor %}
+{% endif %}
 
 {% endblock %}
