@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from datetime import date
 
 
 class Profile(models.Model):
@@ -54,6 +55,13 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+
+    def get_age(self):
+        today = date.today()
+        age = today.year - self.birthday.year - (
+            (today.month, today.day) < (self.birthday.month, self.birthday.day)
+        )
+        return age
 
     @property
     def get_avatar(self):

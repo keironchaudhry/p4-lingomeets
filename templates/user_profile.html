@@ -53,7 +53,7 @@
 
                     <!-- Date Of Birth -->
                     <div>
-                        <h6><u>Date of birth:</u> {{ profile.birthday|default:'' }}</h6>
+                        <h6><u>Date of birth:</u> {{ profile.get_age|default:'' }}</h6>
                     </div>
 
                     <hr class="break">
