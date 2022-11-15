@@ -58,7 +58,6 @@ class Profile(models.Model):
 
     def get_age(self):
         if self.birthday:
-            date_of_birth = self.birthday
             today = date.today()
             age = today.year - self.birthday.year - (
                 (today.month, today.day) < (self.birthday.month, self.birthday.day)
