@@ -1,5 +1,5 @@
 """
-URL patterns for 'event' app
+URL patterns for 'review' app
 """
 
 from django.contrib.auth.decorators import login_required
