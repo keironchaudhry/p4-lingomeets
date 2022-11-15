@@ -57,11 +57,15 @@ class Profile(models.Model):
         return f'{self.first_name} {self.last_name}'
 
     def get_age(self):
-        today = date.today()
-        age = today.year - self.birthday.year - (
-            (today.month, today.day) < (self.birthday.month, self.birthday.day)
-        )
-        return age
+        if self.birthday:
+            date_of_birth = self.birthday
+            today = date.today()
+            age = today.year - self.birthday.year - (
+                (today.month, today.day) < (self.birthday.month, self.birthday.day)
+            )
+            return age
+        else:
+            return ''
 
     @property
     def get_avatar(self):
