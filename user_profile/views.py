@@ -35,7 +35,7 @@ class UserSettings(View):
             profile = form.save(commit=False)
             profile.save()
 
-            messages.success(request, 'Profile saved successfully')
+            messages.success(request, 'Profile saved successfully.')
         else:
             messages.error(
                 request,
