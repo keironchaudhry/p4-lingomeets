@@ -39,12 +39,12 @@
 
         {% if page_obj.has_previous %}
         <!-- Next Page Button -->
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-primary">&laquo; Back </a></li>
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary">&laquo; Back </a></li>
         {% endif %}
 
         {% if page_obj.has_next %}
         <!-- Previous Page Button -->
-        <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-primary"> Next &raquo;</a></li>
+        <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-secondary"> Next &raquo;</a></li>
         {% endif %}
 
     </ul>
