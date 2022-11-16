@@ -55,7 +55,11 @@
     {% endfor %}
     {% endif %}
 
+    {% if reviews %}
+
     {% for review in reviews %}
+    
+    {% if review.event == event %}
 
     <div class="text-center mt-4 mb-4">
 
@@ -108,7 +112,11 @@
 
     {% endif %}
 
+    {% endif %}
+
     {% endfor %}
+
+    {% endif %}
 
     {% if user.is_authenticated %}
 
