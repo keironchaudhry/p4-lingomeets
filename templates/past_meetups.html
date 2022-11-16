@@ -2,12 +2,16 @@
 
 {% for event in event_list %}
 
-<div class="container-fluid text-center">
+<section class="container-fluid text-center">
 
     <!-- Event Title -->
-    <div class="text-center mt-3">
-        <h3><strong>LingoMeets Meet-Up: {{ event.title }}</strong></h3>
-    </div>
+    
+    <h3 class="text-center mt-3">
+        <strong>
+            <u>LingoMeets Meet-Up: {{ event.title }}</u>
+        </strong>
+    </h3>
+    
 
     <hr class="break">
 
@@ -26,7 +30,7 @@
         <a href="{% url 'meetup_detail' event.slug %}" class="btn btn-secondary mb-4">View more</a>
     </div>
 
-</div>
+</section>
 
 {% endfor %}
 
