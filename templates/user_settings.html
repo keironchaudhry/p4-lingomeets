@@ -1,52 +1,115 @@
 {% extends "base.html" %}
 {% block content %}
 
-Profile settings page
+<!-- User Profile Settings -->
 
 <form action="{% url 'user_settings' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <div>
+    <div class="container-fluid">
+        <div class="row">
 
-        <div>
-            <label for="first_name">First Name</label>
-            <input name="first_name" class="form-control" id="first_name" type="text"
-                placeholder="Enter your first name" value="{{ profile.first_name|default:'' }}" required>
-        </div>
+            <section class="card card-body bg-white border-light profile-shadow mb-4">
 
-        <div>
-            <label for="last_name">Last Name</label>
-            <input name="last_name" class="form-control" id="last_name" type="text" placeholder="Also your last name"
-                value="{{ profile.last_name|default:'' }}" required>
-        </div>
+                <!-- Title -->
+                <h2 class="h5 mb-4 text-center">
+                    <u><strong>Profile information</strong></u>
+                </h2>
 
-        <div>
-            <form action="" method="post">
-                <label for="bio">Bio</label>
-                <input name="bio" class="form-control" id="bio" type="text" placeholder="Enter your bio"
-                    value="{{ profile.bio|default:'' }}" required>
-            </form>
-        </div>
+                <div class="row">
 
-        <div>
-            <div>
-                <!-- Choose File Icon -->
-                <span class="icon icon-md">
-                    <span class="fas fa-paperclip mr-3"></span>
-                </span>
-                <!-- Choose File Input -->
-                <input name="avatar" type="file">
-                <div>
-                    <div class="font-weight-normal text-dark">Choose Image</div>
-                    <div class="text-gray small">JPG, GIF or PNG. Max size of 800K</div>
+                    <!-- First Name Input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="first_name">First Name</label>
+                        <input name="first_name" class="form-control" id="first_name" type="text"
+                            placeholder="Enter your first name" value="{{ profile.first_name|default:'' }}" required>
+                    </div>
+
+                    <!-- Last Name Input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="last_name">Last Name</label>
+                        <input name="last_name" class="form-control" id="last_name" type="text"
+                            placeholder="Also your last name" value="{{ profile.last_name|default:'' }}" required>
+                    </div>
+
+                    <!-- Birthday Input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="birthday">Birthday</label>
+                        <div class="form-group">
+                            <input name="birthday" data-datepicker="" class="form-control" id="birthday" type="text"
+                                placeholder="dd/mm/yyyy" value="{{ profile.birthday|date:'m/d/Y'|default:'' }}"
+                                required>
+                        </div>
+                    </div>
+
+                    <!-- Native Language Input -->
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label for="native_language">Native language</label>
+                            <input name="native_language" class="form-control" id="native_language" type="text"
+                                placeholder="Enter your native language"
+                                value="{{ profile.native_language|default:'' }}" required>
+                        </div>
+                    </div>
+
+                    <!-- Spoken Language(s) Input -->
+                    <div class="col-md-12 mb-3">
+                        <div>
+                            <label for="other_language">Other language(s)</label>
+                            <input name="other_language" class="form-control" id="other_language" type="text"
+                                placeholder="Other language(s) that you speak"
+                                value="{{ profile.other_language|default:'' }}" required>
+                        </div>
+                    </div>
+
+                    <!-- Bio -->
+                    <div>
+                        <form action="" method="post">
+                            <label for="bio">Bio</label>
+                            <input name="bio" class="form-control" id="bio" type="text" placeholder="Enter your bio"
+                                value="{{ profile.bio|default:'' }}" required>
+                        </form>
+                    </div>
                 </div>
+
+            </section>
+
+            <!-- Select Profile Image Card -->
+            <div class="container-fluid">
+                <section class="card card-body bg-white border-light profile-shadow mb-4">
+
+                    <!-- Title Header -->
+                    <h2 class="h5 mb-4 text-center">
+                        <strong><u>Select profile photo</u></strong>
+                    </h2>
+
+                    <div class="d-flex justify-content-xl-center">
+                        <div class="d-flex">
+
+                            <!-- Choose File Icon -->
+                            <span class="">
+                                <span class="fas fa-paperclip mr-3"></span>
+                            </span>
+
+                            <!-- Choose File Input -->
+                            <input name="avatar" type="file">
+                            <div>
+                                <div class="font-weight-normal text-dark mb-1 text-center">Choose Image</div>
+                                <div class="text-gray small">JPG, GIF or PNG. Max size of 800K</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </section>
             </div>
-        </div>
 
-        <div class="text-center mt-4 mb-4">
-            <button type="submit" class="btn btn-secondary">Save All</button>
-        </div>
+            <div class="text-center mt-4 mb-4">
+                <button type="submit" class="btn btn-secondary">Save All</button>
+            </div>
 
+        </div>
     </div>
+
 </form>
 
 {% endblock %}
