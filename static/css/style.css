@@ -251,6 +251,33 @@ header {
     box-shadow: rgba(0, 0, 0, 0.3) 0.5px 0.5px 3px;
 }
 
+/* Modal Design */
+
+.modal-dialog div {
+    border: none;
+}
+
+.modal-header {
+    background-color: #07889B;
+}
+
+.modal-header h5 {
+    color: #FFE4E1;
+}
+
+.modal-body {
+    background-color: #FDF5E6;
+}
+
+.modal-footer {
+    background-color: #FDF5E6;
+}
+
+.modal-footer button:hover {
+    transform: scale(1.1);
+    transition: 50ms;
+}
+
 /* AllAuth Template Customisation(s) */
 
 .sign-up-font p {
