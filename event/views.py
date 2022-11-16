@@ -29,11 +29,12 @@ class MeetupView(View):
         queryset = Event.objects
         event = get_object_or_404(queryset, slug=slug)
 
-        review = Review.objects
-        reviews = review.filter(is_admin_approved=True)
+        reviews = event.reviews.filter(is_admin_approved=True)
         reviewed = False
-        if not reviewed:
+
+        if not reviews:
             messages.info(request, 'There are currently no reviews.')
+
         review_form = ReviewForm()
 
         return render(
@@ -54,8 +55,7 @@ class MeetupView(View):
         queryset = Event.objects
         event = get_object_or_404(queryset, slug=slug)
 
-        review = Review.objects
-        reviews = review.filter(is_admin_approved=True)
+        reviews = event.reviews.filter(is_admin_approved=True)
         reviewed = False
         review_form = ReviewForm(data=request.POST)
 
