@@ -3,6 +3,21 @@
 
 {% for profile in profile_list %}
 
+<div class="text-center">
+
+    <!-- Successful Update Message -->
+    {% if messages %}
+    {% for message in messages %}
+
+    <div class="text-center h4 mt-4">
+        <p>{{ message }}.</p>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+
+</div>
+
 <div class="container card-container">
     <div class="row">
 
@@ -116,13 +131,5 @@
         Update profile
     </a>
 </div>
-
-{% if messages %}
-{% for message in messages %}
-
-{{ message.message }}
-
-{% endfor %}
-{% endif %}
 
 {% endblock %}
