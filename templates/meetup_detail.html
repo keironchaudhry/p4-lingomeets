@@ -97,7 +97,7 @@
     {% if review.user == request.user %}
 
     <!-- Edit And Delete Buttons -->
-    <div class="row">
+    <div class="row mb-5">
         <div class="col text-end">
             <a class="btn btn-secondary" href="{% url 'edit_review' review.id %}">Edit</a>
         </div>
@@ -111,6 +111,8 @@
     </div>
 
     {% endif %}
+
+    <hr class="break">
 
     {% endif %}
 
