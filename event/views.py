@@ -32,6 +32,8 @@ class MeetupView(View):
         review = Review.objects
         reviews = review.filter(is_admin_approved=True)
         reviewed = False
+        if not reviewed:
+            messages.info(request, 'There are currently no reviews.')
         review_form = ReviewForm()
 
         return render(
