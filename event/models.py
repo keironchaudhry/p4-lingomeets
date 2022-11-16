@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+import datetime
 
 
 class Event(models.Model):
@@ -51,3 +52,13 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+    def has_finished(self):
+        """
+        Determines whether an event has finished
+        and is in the past or is yet to happen
+        """
+        if self.date <= datetime.date.today():
+            return True
+        else:
+            return False
