@@ -100,11 +100,9 @@
             <a class="btn btn-secondary" href="{% url 'edit_review' review.id %}">Edit</a>
         </div>
         <div class="col text-start">
-            <form action="{% url 'delete_review' event.slug %}" method="post">
-                {% csrf_token %}
-                <button type="submit" name="event_id" value="{{ event.slug }}"
-                    class="btn btn-danger btn-delete">Delete</button>
-            </form>
+            <button type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#deleteModal">
+                Delete
+            </button>
         </div>
     </div>
 
@@ -145,8 +143,43 @@
 
     {% endif %}
 
+    <!-- Modal For Deleting Post-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <!-- Modal Title -->
+                <section class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">
+                        Wait!
+                    </h5>
+                </section>
+
+                <!-- Modal Body Content -->
+                <div class="modal-body">
+                    Are you sure you want to permanently delete this post?
+                </div>
+
+                <!-- Modal Footer And Buttons -->
+                <div class="modal-footer">
+
+                    <!-- 'Go Back' Button -->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Go back</button>
+
+                    <!-- Delete Button -->
+                    <form action="{% url 'delete_review' event.slug %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" name="event_id" value="{{event.slug}}"
+                            class="btn btn-danger btn-m">Delete</button>
+                    </form>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </section>
-
-
 
 {% endblock %}
