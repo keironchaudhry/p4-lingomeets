@@ -19,6 +19,11 @@ Deployed version of this project can be found [here]().
     * [Strategy](#strategy)
     * [User Stories](#user-stories)
 * [Design]()
+    * [Website Structure](#website-structure)
+    * [Relational Database Diagram](#relational-database-diagram)
+    * [Design Diagram](#design-diagram)
+    * [Colour Design](#colour-design)
+    * [Fonts](#fonts)
 * [Features]()
 * [Features Left to Implement]()
 * [Technologies and libraries used]()
@@ -127,14 +132,17 @@ Learning languages can be an arduous task, and to be able maintain several langu
 * As a **user**, I can **update my profile information** so that I can **modify user profile dashboard information.**
 
 
-# **Project Requirements**
+# **Design**
 
-To be added
+## **Website Structure**
 
+## **Relational Database Diagram**
 
-# **Design Diagram**
+## **Design Diagram**
 
-To be added
+## **Colour Design**
+
+## **Fonts**
 
 
 # **Features**
