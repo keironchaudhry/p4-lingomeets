@@ -2,6 +2,7 @@
 {% block content %}
 
 {% for profile in profile_list %}
+{% if user == profile.user %}
 
 <div class="text-center">
 
@@ -124,12 +125,17 @@
     </div>
 </div>
 
+{% endif %}
 {% endfor %}
 
 <div class="text-center mt-4 mb-4">
     <a href="{% url 'user_settings' %}" class="btn btn-secondary">
         Update profile
     </a>
+</div>
+
+<div class="h5 text-center text-muted mb-4">
+    <p>Be sure to update your profile if you still haven't!</p>
 </div>
 
 {% endblock %}
