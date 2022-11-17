@@ -26,8 +26,8 @@ class ReviewAdmin(admin.ModelAdmin):
         'rating'
     )
     actions = [
-        'approve_comments'
+        'approve_review'
     ]
 
-    def approve_comments(self, request, queryset):
+    def approve_review(self, request, queryset):
         queryset.update(is_admin_approved=True)
