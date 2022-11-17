@@ -99,9 +99,30 @@ class MeetupView(View):
 
 
 class AttendeeRegistration(View):
+    """
+    View for rendering attendee
+    registration using a toggle button
+    """
+    def get(self, request, *args, **kwargs):
+        """
+        GET method for registered attendees
+        """
+        event = Event.objects.order_by('-date').filter(
+            attendees=request.user
+        )
+
+        return render(
+            request,
+            'meetup_detail.html',
+            {
+                'event': event,
+            }
+        )
 
     def post(self, request, slug, *args, **kwargs):
-
+        """
+        POST method for registering attendees
+        """
         queryset = Event.objects
         event = get_object_or_404(queryset, slug=slug)
 
@@ -116,20 +137,3 @@ class AttendeeRegistration(View):
                 args=[slug]
                 )
             )
-
-
-class AttendeeRegistered(generic.TemplateView):
-
-    def get(self, request, *args, **kwargs):
-
-        event = Event.objects.order_by('-date').filter(
-            attendees=request.user
-        )
-
-        return render(
-            request,
-            'meetup_detail.html',
-            {
-                'event': event,
-            }
-        )
