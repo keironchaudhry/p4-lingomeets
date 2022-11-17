@@ -1,9 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for profile in profile_list %}
-{% if user == profile.user %}
-
 <div class="text-center">
 
     <!-- Successful Update Message -->
@@ -18,6 +15,9 @@
     {% endif %}
 
 </div>
+
+{% for profile in profile_list %}
+{% if user == profile.user %}
 
 <div class="container card-container">
     <div class="row">
