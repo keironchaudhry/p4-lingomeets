@@ -173,8 +173,8 @@ Learning languages can be an arduous task, and to be able maintain several langu
     * Contains the following fields: *profile_id*, *user*, *first_name*, *last_name*, *birthday*, *avatar*, *native_language*, *other_language*, *bio*, *created_at*, *updated_at*
     * Contains a method to calculate the age of the user using their birthday date
     * Contains a method to return the user avatar url to display on template
-    
 
+    
 ## **Design Diagram**
 
 ## **Colour Design**

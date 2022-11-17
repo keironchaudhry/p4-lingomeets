@@ -36,6 +36,24 @@
                 <p>{{ event.description }}</p>
             </div>
 
+            <!-- Register and Deregister Buttons -->
+            {% if user.is_authenticated %}
+            <form action="" method="post" class="mt-4 mb-4">
+                {% csrf_token %}
+
+                <!-- Deregister Button -->
+                <button type="submit" name="event_id" value=""
+                    class="btn btn-secondary">Deregister</button>
+
+                <!-- Register Button -->
+                <button type="submit" name="event_id" value=""
+                    class="btn btn-secondary">Register</button>
+
+            </form>
+            {% endif %}
+
+        </div>
+
         </div>
 
     </div>
