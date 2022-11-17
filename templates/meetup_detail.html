@@ -26,6 +26,12 @@
                 </strong>
             </h4>
 
+            <!-- Event Attendees -->
+            <h4 class="mt-3">
+                <strong><u>Attendees:</u> {{ event.attendees_count }}
+                </strong>
+            </h4>
+
             <!-- Event Image -->
             <div class="container col-md-8 mt-4">
                 <img src="{{ event.image.url }}" class="img-fluid rounded-circle" alt="Event Image">
@@ -38,15 +44,15 @@
 
             <!-- Register and Deregister Buttons -->
             {% if user.is_authenticated %}
-            <form action="" method="post" class="mt-4 mb-4">
+            <form action="{% url 'attendee_registration' event.slug %}" method="post" class="mt-4 mb-4">
                 {% csrf_token %}
 
                 <!-- Deregister Button -->
-                <button type="submit" name="event_id" value=""
+                <button type="submit" name="event_id" value="{{ event.slug }}"
                     class="btn btn-secondary">Deregister</button>
 
                 <!-- Register Button -->
-                <button type="submit" name="event_id" value=""
+                <button type="submit" name="event_id" value="{{ event.slug }}"
                     class="btn btn-secondary">Register</button>
 
             </form>

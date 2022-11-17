@@ -35,6 +35,10 @@ class MeetupView(View):
         if not reviews:
             messages.info(request, 'There are currently no reviews.')
 
+        attendees = False
+        if event.attendees.filter(id=request.user.id).exists():
+            registered = True
+
         review_form = ReviewForm()
 
         return render(
@@ -44,6 +48,7 @@ class MeetupView(View):
                 'event': event,
                 'reviews': reviews,
                 'reviewed': reviewed,
+                'attendees': attendees,
                 'review_form': review_form
             }
         )
@@ -57,6 +62,11 @@ class MeetupView(View):
 
         reviews = event.reviews.filter(is_admin_approved=True)
         reviewed = False
+
+        attendees = False
+        if event.attendees.filter(id=request.user.id).exists():
+            registered = True
+
         review_form = ReviewForm(data=request.POST)
 
         if (not reviewed):
@@ -82,6 +92,44 @@ class MeetupView(View):
                         'event': event,
                         'reviews': reviews,
                         'reviewed': reviewed,
+                        'attendees': attendees,
                         'review_form': review_form
                     }
                 )
+
+
+class AttendeeRegistration(View):
+
+    def post(self, request, slug, *args, **kwargs):
+
+        queryset = Event.objects
+        event = get_object_or_404(queryset, slug=slug)
+
+        if event.attendees.filter(id=request.user.id).exists():
+            event.attendees.remove(request.user)
+        else:
+            event.attendees.add(request.user)
+
+        return HttpResponseRedirect(
+            reverse(
+                'meetup_detail',
+                args=[slug]
+                )
+            )
+
+
+class AttendeeRegistered(generic.TemplateView):
+
+    def get(self, request, *args, **kwargs):
+
+        event = Event.objects.order_by('-date').filter(
+            attendees=request.user
+        )
+
+        return render(
+            request,
+            'meetup_detail.html',
+            {
+                'event': event,
+            }
+        )
