@@ -138,6 +138,43 @@ Learning languages can be an arduous task, and to be able maintain several langu
 
 ## **Relational Database Diagram**
 
+* The project uses a relational database (PostgreSQL)
+
+* The following diagram represents the relational database model design for this website. It was made using Quick Database Diagrams:
+
+![relational-database-diagram](/documents/readme_images/model%20database%20diagram%20new.jpg)
+
+**Models**
+
+* **User**
+    * The User model contains information about each user that registers an account
+    * It is part of the Django allauth library
+    * The fields used for this project are: *username*, *email*, *password*
+
+* **Event**
+    * The Event model is the principal model
+    * Only an admin can create Event objects
+    * All users can interact with Event objects
+    * The model contains the following fields: *event_id*, *title*, *slug*, *date*, *destination*, *image*, *description*, *price*, *attendees*, *created_on*
+    * Contains a method to show if the event has been completed
+
+* **Review**
+    * Used to review Event objects by users
+    * ForeignKey relationship with both Event and User
+    * Contains the following fields: *review_id*, *event*, *user*, *content*, *rating*, *created_at*, *updated_at*, *is_admin_approved*
+    * Contains a method to get the range of a user rating, used to create a star-system review as part of the website features.
+
+* **Profile**
+    * The Profile model is used to store information regarding any registered user
+    * Users can create a profile object upon creating an account
+    * Users can modify profile information at any time
+    * An admin can also create, modify and delete profile objects
+    * ForeignKey relationship with User
+    * Contains the following fields: *profile_id*, *user*, *first_name*, *last_name*, *birthday*, *avatar*, *native_language*, *other_language*, *bio*, *created_at*, *updated_at*
+    * Contains a method to calculate the age of the user using their birthday date
+    * Contains a method to return the user avatar url to display on template
+    
+
 ## **Design Diagram**
 
 ## **Colour Design**
