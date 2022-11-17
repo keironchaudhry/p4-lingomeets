@@ -62,3 +62,9 @@ class Event(models.Model):
             return True
         else:
             return False
+
+    def attendees_count(self):
+        """
+        Returns a count of event attendees
+        """
+        return self.attendees.count()
