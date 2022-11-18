@@ -30,10 +30,12 @@ class TestEventViews(TestCase):
             '/event/past_meetups/'
         )
         self.assertEqual(
-            response.status_code, 200
+            response.status_code,
+            200
         )
         self.assertTemplateUsed(
-            response, 'past_meetups.html'
+            response,
+            'past_meetups.html'
         )
 
     def test_meetup_view_get_method(self):
@@ -44,10 +46,12 @@ class TestEventViews(TestCase):
             f'/event/{event.slug}/'
         )
         self.assertEqual(
-            response.status_code, 200
+            response.status_code,
+            200
         )
         self.assertTemplateUsed(
-            response, 'meetup_detail.html'
+            response,
+            'meetup_detail.html'
         )
 
     def test_user_can_create_a_review(self):
@@ -68,10 +72,12 @@ class TestEventViews(TestCase):
             rating=3
         )
         self.assertEqual(
-            review.content, 'Test content'
+            review.content,
+            'Test content'
         )
         self.assertEqual(
-            review.rating, 3
+            review.rating,
+            3
         )
 
     def test_review_post_method_for_user_review(self):
@@ -96,7 +102,39 @@ class TestEventViews(TestCase):
             {'content': 'Test content', 'rating': 3}
         )
         self.assertRedirects(
-            response, f'/event/{event.slug}/'
+            response,
+            f'/event/{event.slug}/'
+        )
+
+    def test_attendee_registration_get_method(self):
+        self.client.login(
+            username='test_user',
+            password='test_password'
+        )
+        event = Event.objects.get(
+            title='Dummy Event title'
+        )
+        self.assertEqual(
+            event.title,
+            'Dummy Event title'
+        )
+        date = Event.objects.get(
+            date=datetime.date.today()
+        )
+        self.assertEqual(
+            date.date,
+            datetime.date.today()
+        )
+        response = self.client.get(
+            f'/event/{event.slug}/'
+        )
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+        self.assertTemplateUsed(
+            response,
+            'meetup_detail.html'
         )
 
     def test_attendee_registration_post_method(self):
@@ -114,12 +152,18 @@ class TestEventViews(TestCase):
             f'/event/register/{event.slug}'
         )
         self.assertRedirects(
-            response, f'/event/{event.slug}/'
+            response,
+            f'/event/{event.slug}/'
         )
         response = self.client.post(
-            f'/register/{event.slug}'
+            f'/event/register/{event.slug}'
+        )
+        self.assertEqual(
+            response.status_code,
+            302
         )
         attendees = event.attendees.all()
         self.assertQuerysetEqual(
-            attendees, ['<User: test_user>']
+            attendees,
+            []
         )
