@@ -136,6 +136,27 @@ Learning languages can be an arduous task, and to be able maintain several langu
 
 ## **Website Structure**
 
+* Website is structured into 8 pages
+* All pages extend the same base therefore producing a consistent style across the application
+* Pages are the following:
+
+| Page | Description |
+| --- | --- |
+| **Header** | Navbar header with site logo and collapsable link for media query sizes |
+| **Home** | A landing page consisting of a welcome and upcoming meet-up |
+| **Past Meet-Ups** | A list of all previous meet-ups |
+| **Meet-Up Detail** | Every meet-up post provides detail on the event with user options |
+| **Sign Up** | Where users can create an account |
+| **Login** | Where users can login with an account |
+| **Logout** | Where users logout of an account |
+| **User Profile** | A profile dashboard displaying user information |
+| **Profile Settings** | An input page where users can modify their existing information |
+| **Footer** | Displays site logo, social media links, timetable, links and contact details |
+
+* **Interactive Design**
+
+To be added
+
 ## **Relational Database Diagram**
 
 * The project uses a relational database (PostgreSQL)
@@ -173,19 +194,35 @@ Learning languages can be an arduous task, and to be able maintain several langu
     * Contains the following fields: *profile_id*, *user*, *first_name*, *last_name*, *birthday*, *avatar*, *native_language*, *other_language*, *bio*, *created_at*, *updated_at*
     * Contains a method to calculate the age of the user using their birthday date
     * Contains a method to return the user avatar url to display on template
-
     
 ## **Design Diagram**
 
+* **Wireframes**
+    * Skeleton structure for website was created by hand. 
+    * Skeletal design structures exist for imagined landing page and event page, all other pages were created based on these designs once the front-end was comfortably implemented. 
+    * Design for landing page can be seen [here](/documents/readme_images/index.jpg).
+    * Design for event page can be seen [here](/documents/readme_images/event.jpg).
+
 ## **Colour Design**
+
+This colour palette was made using [Color Hunt](https://colorhunt.co/create).
+
+![colour-palette](/documents/readme_images/colour%20palette%20scheme.jpg)
+
+This colour palette has been the basis for colour which has been applied throughout the website in this general order: 
+
+* Navbar color: #07889B (Silver-blue)
+* Body : #FDF5E6 ('Oldlace' white)
+* Occasional white : #FAFAFA (white)
+* Principal font colour : #000000 (black)
 
 ## **Fonts**
 
+Font application in this website have been taken from [Google Fonts](https://fonts.google.com/about) and consist principally of the font style **Lora**.
 
 # **Features**
 
 To be added
-
 
 # **Features left to implement**
 
