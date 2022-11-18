@@ -43,7 +43,7 @@
             </div>
 
             <!-- Register and Deregister Buttons -->
-            {% if user.is_authenticated %}
+            {% if user.is_authenticated and not event.has_finished %}
             <form action="{% url 'attendee_registration' event.slug %}" method="post" class="mt-4 mb-4">
                 {% csrf_token %}
 
