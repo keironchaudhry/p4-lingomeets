@@ -29,8 +29,12 @@ class TestEventViews(TestCase):
         response = self.client.get(
             '/event/past_meetups/'
         )
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'past_meetups.html')
+        self.assertEqual(
+            response.status_code, 200
+        )
+        self.assertTemplateUsed(
+            response, 'past_meetups.html'
+        )
 
     def test_meetup_view_get_method(self):
         event = Event.objects.get(
@@ -39,8 +43,12 @@ class TestEventViews(TestCase):
         response = self.client.get(
             f'/event/{event.slug}/'
         )
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'meetup_detail.html')
+        self.assertEqual(
+            response.status_code, 200
+        )
+        self.assertTemplateUsed(
+            response, 'meetup_detail.html'
+        )
 
     def test_user_can_create_a_review(self):
         self.client.login(
@@ -59,8 +67,12 @@ class TestEventViews(TestCase):
             content='Test content',
             rating=3
         )
-        self.assertEqual(review.content, 'Test content')
-        self.assertEqual(review.rating, 3)
+        self.assertEqual(
+            review.content, 'Test content'
+        )
+        self.assertEqual(
+            review.rating, 3
+        )
 
     def test_review_post_method_for_user_review(self):
         self.client.login(
@@ -83,4 +95,31 @@ class TestEventViews(TestCase):
             f'/event/{event.slug}/',
             {'content': 'Test content', 'rating': 3}
         )
-        self.assertRedirects(response, f'/event/{event.slug}/')
+        self.assertRedirects(
+            response, f'/event/{event.slug}/'
+        )
+
+    def test_attendee_registration_post_method(self):
+        self.client.login(
+            username='test_user',
+            password='test_password'
+        )
+        event = Event.objects.get(
+            title='Dummy Event title'
+        )
+        self.assertEqual(
+            event.title, 'Dummy Event title'
+        )
+        response = self.client.post(
+            f'/event/register/{event.slug}'
+        )
+        self.assertRedirects(
+            response, f'/event/{event.slug}/'
+        )
+        response = self.client.post(
+            f'/register/{event.slug}'
+        )
+        attendees = event.attendees.all()
+        self.assertQuerysetEqual(
+            attendees, ['<User: test_user>']
+        )
