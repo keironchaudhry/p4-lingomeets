@@ -46,15 +46,15 @@
             {% if user.is_authenticated and not event.has_finished %}
             <form action="{% url 'attendee_registration' event.slug %}" method="post" class="mt-4 mb-4">
                 {% csrf_token %}
-
+                {% if attending %}
                 <!-- Deregister Button -->
                 <button type="submit" name="event_id" value="{{ event.slug }}"
                     class="btn btn-secondary">Deregister</button>
-
+                {% else %}
                 <!-- Register Button -->
                 <button type="submit" name="event_id" value="{{ event.slug }}"
                     class="btn btn-secondary">Register</button>
-
+                {% endif %}
             </form>
             {% endif %}
 

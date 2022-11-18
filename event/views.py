@@ -35,9 +35,9 @@ class MeetupView(View):
         if not reviews:
             messages.info(request, 'There are currently no reviews.')
 
-        attendees = False
+        attending = False
         if event.attendees.filter(id=request.user.id).exists():
-            registered = True
+            attending = True
 
         review_form = ReviewForm()
 
@@ -48,7 +48,7 @@ class MeetupView(View):
                 'event': event,
                 'reviews': reviews,
                 'reviewed': reviewed,
-                'attendees': attendees,
+                'attending': attending,
                 'review_form': review_form
             }
         )
@@ -63,9 +63,9 @@ class MeetupView(View):
         reviews = event.reviews.filter(is_admin_approved=True)
         reviewed = False
 
-        attendees = False
+        attending = False
         if event.attendees.filter(id=request.user.id).exists():
-            registered = True
+            attending = True
 
         review_form = ReviewForm(data=request.POST)
 
@@ -92,7 +92,7 @@ class MeetupView(View):
                         'event': event,
                         'reviews': reviews,
                         'reviewed': reviewed,
-                        'attendees': attendees,
+                        'attending': attending,
                         'review_form': review_form
                     }
                 )
