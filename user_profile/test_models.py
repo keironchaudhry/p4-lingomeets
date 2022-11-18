@@ -35,7 +35,8 @@ class TestProfileModel(TestCase):
             last_name='Test Last Name'
         )
         self.assertEqual(
-            str(profile), f'{profile}'
+            str(profile),
+            f'{profile}'
         )
 
     def test_age_method_returns_age(self):
@@ -46,6 +47,9 @@ class TestProfileModel(TestCase):
             profile.birthday,
             datetime.date.today()
         )
+        self.assertTrue(
+            profile.birthday
+        )
         today = date.today()
         self.assertEqual(
             today,
@@ -53,9 +57,11 @@ class TestProfileModel(TestCase):
         )
         age = today.year - profile.birthday.year - (
             (
-                today.month, today.day
+                today.month,
+                today.day
             ) < (
-                profile.birthday.month, profile.birthday.day
+                profile.birthday.month,
+                profile.birthday.day
             )
         )
         self.assertEqual(
