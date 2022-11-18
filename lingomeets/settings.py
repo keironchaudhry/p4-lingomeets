@@ -19,6 +19,7 @@ if os.path.isfile('env.py'):
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(
     BASE_DIR, 'templates'
@@ -30,11 +31,13 @@ TEMPLATES_DIR = os.path.join(
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
+DEBUG = True
 
 ALLOWED_HOSTS = ['lingomeets.herokuapp.com', 'localhost']
 
@@ -65,16 +68,12 @@ INSTALLED_APPS = [
     'user_profile',
 ]
 
-
 SITE_ID = 1
-
 
 LOGIN_REDIRECT_URL = '/user_profile/user_profile/'
 LOGOUT_REDIRECT_URL = '/'
 
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -86,9 +85,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
 ROOT_URLCONF = 'lingomeets.urls'
-
 
 TEMPLATES = [
     {
@@ -105,7 +102,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 WSGI_APPLICATION = 'lingomeets.wsgi.application'
 
@@ -173,7 +169,6 @@ STATICFILES_DIRS = [os.path.join(
 STATIC_ROOT = os.path.join(
     BASE_DIR, 'staticfiles'
 )
-
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
