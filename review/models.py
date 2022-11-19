@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from event.models import Event
+from lingomeets.validators import validate_textfields
 
 
 class Review(models.Model):
@@ -27,7 +28,8 @@ class Review(models.Model):
         related_name='user_reviews'
     )
     content = models.TextField(
-        blank=True
+        blank=True,
+        validators=[validate_textfields]
     )
     rating = models.IntegerField(
         choices=SCORE,
