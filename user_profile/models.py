@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from datetime import date
+from lingomeets.validators import validate_textfields
 
 
 class Profile(models.Model):
@@ -43,7 +44,8 @@ class Profile(models.Model):
         blank=True
     )
     bio = models.TextField(
-        blank=True
+        blank=True,
+        validators=[validate_textfields]
     )
     created_at = models.DateTimeField(
         auto_now_add=True
