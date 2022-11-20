@@ -146,7 +146,7 @@
     {% endfor %}
     {% endif %}
 
-    {% if user.is_authenticated %}
+    {% if user.is_authenticated and event.has_finished and attending %}
 
     <!-- Leave A Review Section -->
 
