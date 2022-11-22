@@ -16,12 +16,8 @@ def validate_textfields(value):
 
 def validate_age(age):
     if age < 17:
-        ValidationError(
-            'Age cannot be validated. Please try again.'
-        )
+        return ''
     elif age > 101:
-        ValidationError(
-            'Please enter a valid age. Try again.'
-        )
+        return ''
     else:
         return True
