@@ -38,12 +38,14 @@ class Profile(models.Model):
     native_language = models.CharField(
         max_length=150,
         null=True,
-        blank=True
+        blank=True,
+        validators=[validate_only_letters]
     )
     other_language = models.CharField(
         max_length=150,
         null=True,
-        blank=True
+        blank=True,
+        validators=[validate_only_letters]
     )
     bio = models.TextField(
         blank=True,
