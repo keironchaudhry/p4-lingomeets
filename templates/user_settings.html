@@ -21,14 +21,14 @@
                     <div class="col-md-6 mb-3">
                         <label for="first_name">First Name</label>
                         <input name="first_name" class="form-control" id="first_name" type="text"
-                            placeholder="Enter your first name" value="{{ profile.first_name|default:'' }}" required>
+                            placeholder="Enter your first name (letters only)" value="{{ profile.first_name|default:'' }}" required>
                     </div>
 
                     <!-- Last Name Input -->
                     <div class="col-md-6 mb-3">
                         <label for="last_name">Last Name</label>
                         <input name="last_name" class="form-control" id="last_name" type="text"
-                            placeholder="Also your last name" value="{{ profile.last_name|default:'' }}" required>
+                            placeholder="Also your last name (letters only)" value="{{ profile.last_name|default:'' }}" required>
                     </div>
 
                     <!-- Birthday Input -->
@@ -36,7 +36,7 @@
                         <label for="birthday">Birthday</label>
                         <div class="form-group">
                             <input name="birthday" data-datepicker="" class="form-control" id="birthday" type="text"
-                                placeholder="dd/mm/yyyy" value="{{ profile.birthday|date:'m/d/Y'|default:'' }}"
+                                placeholder="Format: dd/mm/yyyy. Users must be over 18." value="{{ profile.birthday|date:'m/d/Y'|default:'' }}"
                                 required>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                         <div>
                             <label for="native_language">Native language</label>
                             <input name="native_language" class="form-control" id="native_language" type="text"
-                                placeholder="Enter your native language"
+                                placeholder="Enter your native language (letters only)"
                                 value="{{ profile.native_language|default:'' }}" required>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                         <div>
                             <label for="other_language">Other language(s)</label>
                             <input name="other_language" class="form-control" id="other_language" type="text"
-                                placeholder="Other language(s) that you speak"
+                                placeholder="Other language(s) that you speak (letters only)"
                                 value="{{ profile.other_language|default:'' }}" required>
                         </div>
                     </div>

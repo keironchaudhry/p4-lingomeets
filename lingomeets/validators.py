@@ -3,8 +3,9 @@ from django.core.validators import RegexValidator
 
 
 validate_only_letters = RegexValidator(
-    r'^[a-zA-Z]*$',
-    'Only alphabetical letters allowed.'
+    (
+        '^[a-zA-Z]*$'
+    )
 )
 
 
