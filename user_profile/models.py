@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from datetime import date
-from lingomeets.validators import validate_textfields, validate_age
+from lingomeets.validators import validate_textfields, validate_age, validate_only_letters
 
 
 class Profile(models.Model):
@@ -18,12 +18,14 @@ class Profile(models.Model):
     first_name = models.CharField(
         max_length=100,
         null=True,
-        blank=True
+        blank=True,
+        validators=[validate_only_letters]
     )
     last_name = models.CharField(
         max_length=100,
         null=True,
-        blank=True
+        blank=True,
+        validators=[validate_only_letters]
     )
     birthday = models.DateField(
         null=True,

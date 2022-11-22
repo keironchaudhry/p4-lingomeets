@@ -1,4 +1,11 @@
 from django.core.exceptions import ValidationError
+from django.core.validators import RegexValidator
+
+
+validate_only_letters = RegexValidator(
+    r'^[a-zA-Z]*$',
+    'Only alphabetical letters allowed.'
+)
 
 
 def validate_textfields(value):
