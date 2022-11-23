@@ -287,3 +287,25 @@ header {
 #forgot-password-font {
     font-size: 20px;
 }
+
+@media screen and (max-width: 768px) {
+
+    /* Landing Page Media Query */
+
+    .landing-page-description p {
+        font-size: 17.5px;
+    }
+
+    /* Meet Up Detail Media Query */
+
+    .event-description {
+        font-size: 17.5px;
+    }
+
+    /* AllAuth Pages Media Query */
+
+    .sign-up-font p {
+        font-size: 17.5px;
+    }
+
+}
