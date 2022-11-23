@@ -1,5 +1,7 @@
 # **LingoMeets**
 
+![am-i-responsive](/documents/readme_images/amiresponsive%20image.jpg)
+
 **LingoMeets is a language-learning meet-up website for language-learning enthusiasts with full user and admin functionality.**
 
 This application was built using [GitHub](https://github.com/) and deployed to [Heroku](https://id.heroku.com/login).
