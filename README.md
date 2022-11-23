@@ -34,8 +34,9 @@ Deployed version of this project can be found [here]().
 * [Bugs during development]()
 * [Unfixed Bugs]()
 * [Development and Deployment]()
-* [Content]()
-* [Credits]()
+* [Credits](#credits)
+    * [Code](#code)
+    * [Acknowledgments](#acknowledgments)
 
 
 # **Project Purpose**
@@ -273,3 +274,28 @@ Deployed version of project at following URL:
 
 
 # **Credits**
+
+## **Code**
+
+The following websites proved to be both insightful and helpful during development of this project:
+
+* [Stack Overflow](https://stackoverflow.com/)
+* [W3School](https://www.w3schools.com/)
+* [GeeksForGeeks](https://www.geeksforgeeks.org/)
+* [YouTube](https://www.youtube.com/)
+
+# **Acknowledgments**
+
+For inspiration, guidance and inputs, thank you to:
+
+* Sandeep Aggarwal
+
+    Absolutely fantastic mentor at Code Institute with brilliant insight into Full Stack Software Development and programmatic skills.
+    
+* Jack Crymble
+
+    Friend and guide, thank you for your knowledge and insight!
+
+* Jody Murray
+
+    Fellow student and colleague, thank you for your input and constant support!
