@@ -4,7 +4,7 @@ from django.core.validators import RegexValidator
 
 validate_only_letters = RegexValidator(
     (
-        '^[a-zA-Z]*$'
+        '[^0-9]+'
     )
 )
 
