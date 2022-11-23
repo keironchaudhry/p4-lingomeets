@@ -309,3 +309,49 @@ header {
     }
 
 }
+
+@media screen and (max-width: 430px) {
+
+    /* Navbar Links */
+
+    header {
+        position: static;
+    }
+
+    .nav-item a {
+        font-size: small;
+        letter-spacing: 0px;
+        margin: 0 -15px 0 23px;
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+
+    /* Navbar Links */
+
+    .nav-item a {
+        margin: 0 -13.5px 0 10px;
+    }
+
+}
+
+@media screen and (max-width: 330px) {
+
+    /* Navbar */
+
+    #logo {
+        margin-left: 40px;
+    }
+
+    .navbar-toggler {
+        margin-left: 127px;
+    }
+
+    /* Navbar Links */
+
+    .nav-item a {
+        margin: 0 -17px 0 2px;
+    }
+
+}
