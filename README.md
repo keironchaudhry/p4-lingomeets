@@ -20,7 +20,7 @@ Deployed version of this project can be found [here]().
     * [Project Scope](#project-scope)
     * [Strategy](#strategy)
     * [User Stories](#user-stories)
-* [Design]()
+* [Design](#design)
     * [Website Structure](#website-structure)
     * [Relational Database Diagram](#relational-database-diagram)
     * [Design Diagram](#design-diagram)
@@ -146,7 +146,7 @@ Learning languages can be an arduous task, and to be able maintain several langu
 | --- | --- |
 | **Header** | Navbar header with site logo and collapsable link for media query sizes |
 | **Home** | A landing page consisting of a welcome and upcoming meet-up |
-| **Past Meet-Ups** | A list of all previous meet-ups |
+| **Past Events** | A list of all previous meet-ups |
 | **Meet-Up Detail** | Every meet-up post provides detail on the event with user options |
 | **Sign Up** | Where users can create an account |
 | **Login** | Where users can login with an account |
@@ -157,7 +157,17 @@ Learning languages can be an arduous task, and to be able maintain several langu
 
 * **Interactive Design**
 
-To be added
+    * Collapsable navbar menu for smaller media query screens
+
+    ![responsive-toggle-example](/documents/readme_images/responsive%20collapsable%20toggle.jpg)
+
+    * All buttons, icons and links respond to hovering
+
+    ![responsive-link-example](/documents/readme_images/responsive%20link%20example.jpg)
+
+    * Pop up modals with warnings and messages across site
+    
+    ![responsive-modal-example](/documents/readme_images/responsive%20modal%20design%20example.jpg)
 
 ## **Relational Database Diagram**
 
