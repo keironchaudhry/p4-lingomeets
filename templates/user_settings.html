@@ -36,7 +36,7 @@
                         <label for="birthday">Birthday</label>
                         <div class="form-group">
                             <input name="birthday" data-datepicker="" class="form-control" id="birthday" type="text"
-                                placeholder="Format: dd/mm/yyyy. Users must be over 18." value="{{ profile.birthday|date:'m/d/Y'|default:'' }}"
+                                placeholder="Format: mm/dd/yyyy. Users must be over 18." value="{{ profile.birthday|date:'m/d/Y'|default:'' }}"
                                 required>
                         </div>
                     </div>
