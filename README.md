@@ -28,8 +28,10 @@ Deployed version of this project can be found [here]().
     * [Fonts](#fonts)
 * [Features]()
 * [Features Left to Implement]()
-* [Technologies and libraries used]()
-* [Database]()
+* [Technologies and libraries used](#technologies-and-libraries-used)
+    * [Languages](#languages)
+    * [Database Platform and Cloud Storage](#database-platform-and-cloud-storage)
+    * [Libraries and other resources](#libraries-and-other-resources)
 * [Testing]()
 * [Bugs during development]()
 * [Unfixed Bugs]()
@@ -246,12 +248,42 @@ To be added
 
 # **Technologies and libraries used**
 
-To be added
+## **Languages**
 
+The languages used are:
 
-# **Database**
+* [HTML](https://html.spec.whatwg.org/multipage/)
+* [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Python](https://www.python.org/)
 
-To be added
+## **Database Platform and Cloud Storage**
+
+* [ElephantSQL Postgres](https://www.elephantsql.com/): SQL database service provided by ElephantSQL for data storage.
+* [SQLite](https://www.sqlite.org/index.html): SQL database engine used by default as part of Django Framework and used during development.
+* [Cloudinary](https://cloudinary.com/home-102622): to store images and static files.
+* [Heroku](https://id.heroku.com/login): to deploy and run the application.
+
+## **Libraries and other resources**
+
+This project contains the following resources:
+
+* [Django](https://www.djangoproject.com/): Python-based framework for rapid website development. 
+* [Bootstrap](https://getbootstrap.com/): CSS and JavaScript library.
+* [Coverage.py](https://coverage.readthedocs.io/en/6.3.2/): used for coverage testing of Python programs. 
+* [HTML Markup Validation](https://validator.w3.org/): used to validate HTML code syntax.
+* [CSS Validation Service](https://jigsaw.w3.org/css-validator/): used to validate CSS code syntax.
+* [PEP8 Validation](http://pep8online.com/): used to validate Python code syntax.
+* [Chrome DevTools](https://developer.chrome.com/docs/devtools/): development tool supplied by Google Chrome browser to test responsive design during development.
+* [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/): used to access website performance.
+* [Quick Database Diagrams](https://www.quickdatabasediagrams.com/): used to create the database model chart.
+* [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/index.html): used for user account registration and user authentication.
+* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/): used for comment and sign-in forms throughout website.
+* [Google Fonts](https://fonts.google.com/): used to import font utilised throughout site.
+* [Font Awesome](https://fontawesome.com/): used for icons across website.
+* [Icons8](https://icons8.com/): used for favicon.
+* [GitHub](https://github.com/): used to store, develop and maintain project code.
+
 
 
 # **Testing**
