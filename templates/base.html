@@ -25,7 +25,7 @@
 
     <!-- Navigation bar header -->
     <header>
-        <nav class="navbar">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
 
                 <!-- NavBar Logo -->
@@ -33,30 +33,40 @@
                     LingoMeets <i class="fa-sharp fa-solid fa-language"></i>
                 </a>
 
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'past_meetups' %}">Past Events</a>
-                    </li>
-                    <!-- For Logged In Users -->
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'user_profile' %}">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Sign-Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
-                </ul>
+                <!-- Responsive Design Collapse Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- NavBar Website Links -->
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'past_meetups' %}">Past Events</a>
+                        </li>
+                        <!-- For Logged In Users -->
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'user_profile' %}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_signup' %}">Sign-Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+
             </div>
         </nav>
     </header>
