@@ -13,8 +13,17 @@ class EventAdmin(admin.ModelAdmin):
         'slug',
         'created_on'
     ]
-    search_fields = ['title', 'content']
-    prepopulated_fields = {'slug': ('title',)}
+    search_fields = [
+        'title',
+        'content'
+    ]
+    prepopulated_fields = {
+        'slug': ('title',)
+    }
     list_filter = [
         'created_on'
     ]
+    # https://stackoverflow.com/questions/27676507/django-admin-panel-with-filter-horizontal 
+    filter_horizontal = (
+        'attendees',
+    )
