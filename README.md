@@ -33,7 +33,9 @@ Deployed version of this project can be found [here]().
 * [Testing]()
 * [Bugs during development]()
 * [Unfixed Bugs]()
-* [Development and Deployment]()
+* [Development and Deployment](#development-and-deployment)
+    * [Local Deployment](#local-deployment)
+    * [Deployment to Heroku](#deployment-to-heroku)
 * [Credits](#credits)
     * [Code](#code)
     * [Acknowledgments](#acknowledgments)
@@ -268,9 +270,61 @@ To be added upon termination of the project
 
 # **Development and deployment**
 
-To be clarified upon conclusion of the project
+The development environment used for this project was GitPod. Regular commits and pushes to Github have been employed to be able to track and trace the development process of the website. The Gitpod environment for this particular project was created using a template provided by Code Institute.
 
-Deployed version of project at following URL:
+For local deployments instructions shall be written below, along with instructions with deployment to Heroku, the hosting service used to deploy this particular website. Heroku was chosen as the hosting service due to its database maintenance capabilities. 
+
+## **Local Deployment**
+
+This repository can be cloned and run locally with the following steps:
+
+1. Login to [GitHub](https://www.github.com).
+2. Select repository named: [keironchaudhry/p4-lingomeets](https://github.com/keironchaudhry/p4-lingomeets).
+3. Click code toggle button and copy the url (i.e., https://github.com/keironchaudhry/p4-lingomeets.git).
+4. In your IDE, open terminal and run the git clone command (i.e., git clone https://github.com/keironchaudhry/p4-lingomeets.git).
+5. The repository will now be cloned in your workspace.
+6. Create an [env.py file](https://dev.to/jakewitcher/using-env-files-for-environment-variables-in-python-applications-55a1) (this file should normally be included in .gitignore, therefore it'll not be committed publicly in the root folder of your project) and add in the following code with the relevant key, value pairs, and ensure you enter the correct key values. For example:
+
+`import os`
+
+`os.environ['SECRET_KEY'] = 'ADDED_BY_YOU'`
+
+`os.environ['DATABASE_URL'] = 'ADDED_BY_YOU'`
+
+`os.environ['CLOUDINARY_URL'] = 'ADDED_BY_YOU'`
+
+7. Install the relevant packages as per the requirements.txt file
+8. In `settings.py` file, ensure the connection is set to either the Heroku Postgres Database or the local SQLite database
+9. Ensure debug is set to true in the `settings.py` file for local development
+10. Add localhost/127.0.0.1 to the ALLOWED_HOSTS variable in `settings.py`
+11. Run `python3 manage.py showmigrations` to check the status of the migrations
+12. Run `python3 manage.py migrate` to migrate the database
+13. Run `python3 manage.py createsuperuser` to create a super/admin user
+14. Start the application by running `python3 manage.py runserver`
+
+## **Deployment to Heroku**
+
+Deployment to Heroku can be done with the following guideline:
+
+1. Create an account on Heroku
+2. Create an app and give it the desired name and select a region
+3. <del>Under resources, search for Postgres, and add _Heroku Postgres_ database to the app</del>
+    * Due to changes taking place as from the 28/11/2022 with regards to Heroku and their PostgreSQL Add-on, student developers at Code Institute have had to migrate their project database to [ElephantSQL](https://www.elephantsql.com/).
+        1. Create an account on ElephantSQL.
+        2. Click on 'Create an instance'
+        3. Give your plan a Name, select the appropriate Plan and then select a region and data-center closest to your location.
+        4. Once details are completed, click 'Create instance'. 
+        5. Copy and paste dashboard `DATABASE_URL` and copy and paste into Heroku Config Vars in Settings, and be sure to set your `env.py` in your project IDE to the same URL. 
+4. The `DATABASE_URL` needs to be set as an environment variable in both Heroku and in the IDE local environment variables
+5. Create a `Procfile` with the following text: `web: gunicorn project_name.wsgi`
+6. Make sure you add your environment variables (env.py) to Heroku's Config Vars
+7. Ensure `Debug` is set to `False` in the settings.py file
+8. Add 'localhost', and 'project_name.herokuapp.com' to the `ALLOWED_HOSTS` variable in `settings.py`
+9. Run `python3 manage.py showmigrations` to check the status of the migrations
+10. Run `python3 manage.py migrate` to migrate any necessary data to the database
+11. Run `python3 manage.py createsuperuser` to create an admin user
+12. Connect the app to GitHub, and enable automatic deploys from main (or you can manually deploy).
+13. Click 'deploy' to deploy your application to Heroku for the first time
 
 
 # **Credits**
