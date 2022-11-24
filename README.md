@@ -10,7 +10,7 @@ This application was built using [GitHub](https://github.com/) and deployed to [
 
 Python (+Django Framework), JavaScript, HTML5 and CSS3.
 
-Deployed version of this project can be found [here]().
+Deployed version of this project can be found [here](https://lingomeets.herokuapp.com/).
 
 
 ## **Table of content**
@@ -32,7 +32,12 @@ Deployed version of this project can be found [here]().
     * [Languages](#languages)
     * [Database Platform and Cloud Storage](#database-platform-and-cloud-storage)
     * [Libraries and other resources](#libraries-and-other-resources)
-* [Testing]()
+* * [Testing](#testing)
+    * [Introduction](#introduction)
+    * [Testing User Stories](#testing-user-stories)
+    * [Automated Testing](#automated-testing)
+    * [Testing Accessibility and Performance](#testing-accessibility-and-performance)
+    * [Code Validation](#code-validation)
 * [Bugs during development]()
 * [Unfixed Bugs]()
 * [Development and Deployment](#development-and-deployment)
@@ -285,8 +290,40 @@ This project contains the following resources:
 * [GitHub](https://github.com/): used to store, develop and maintain project code.
 
 
-
 # **Testing**
+
+## **Introduction**
+
+* Site has been continuously tested throughout development stages using the following features:
+    * Python terminal for backend functionalities
+    * Google Developer Tools 
+    * Manual Testing
+    * Automated Testing
+
+## **Testing User Stories**
+
+To be added
+
+## **Automated Testing**
+
+* 18 automated tests have been implemented.
+* Automated tests were carried out during the creation of website functions and classes.
+* The tool use to measure coverage of code was the Coverage.py tool.
+* To check coverage in the HTML format run in the terminal:
+    * `coverage run --source=appname manage.py test`
+    * `coverage html`
+    * Run `python3 -m http.server` (in case there is a server already running, enter `python3 -m http.server 8080`, for example).
+    * Live server should be running with a list of HTML options.
+    * Pick 'htmlcov/'.
+
+![coverage-report-1](/documents/readme_images/coverage%20part%201.jpg)
+![coverage-report-1](/documents/readme_images/coverage%20part%202.jpg)
+
+## **Testing Accessibility and Performance**
+
+To be added
+
+## **Code Validation**
 
 To be added
 
