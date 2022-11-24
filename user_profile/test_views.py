@@ -43,7 +43,10 @@ class TestProfileViews(TestCase):
             '/user_profile/user_profile',
             follow=True
         )
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            response.status_code,
+            200
+        )
 
     def test_profile_view_dispatch(self):
         user = self.client.login(
@@ -57,12 +60,21 @@ class TestProfileViews(TestCase):
         profile = Profile.objects.get(
             first_name='Test First Name'
         )
-        self.assertEqual(profile.first_name, 'Test First Name')
+        self.assertEqual(
+            profile.first_name,
+            'Test First Name'
+        )
         response = self.client.get(
             '/user_profile/user_profile/'
         )
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'user_profile.html')
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+        self.assertTemplateUsed(
+            response,
+            'user_profile.html'
+        )
 
     def test_profile_view_user_can_post(self):
         user = self.client.login(
@@ -72,13 +84,36 @@ class TestProfileViews(TestCase):
         profile = Profile.objects.get(
             bio='Test Bio'
         )
-        self.client.post(
-            f'/user_settings/',
-            {'bio': 'Test Bio'}
-        )
-        self.assertEqual(profile.bio, 'Test Bio')
         response = self.client.get(
             '/user_profile/user_settings/'
         )
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'user_settings.html')
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+        self.assertTemplateUsed(
+            response,
+            'user_settings.html'
+        )
+        profile = Profile.objects.get(
+            bio='Test Bio'
+        )
+        self.client.post(
+            f'/user_profile/user_settings/',
+            {'bio': 'Test Bio'}
+        )
+        self.assertEqual(
+            profile.bio,
+            'Test Bio'
+        )
+        response = self.client.get(
+            '/user_profile/user_profile/'
+        )
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+        self.assertTemplateUsed(
+            response,
+            'user_profile.html'
+        )
