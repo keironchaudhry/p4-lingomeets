@@ -1,4 +1,26 @@
 {% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Error 401{% endblock title %}
+
 {% block content %}
+
+<div class="container-fluid">
+
+    <div class="text-center mt-3">
+        <h2>You are not authorized to proceed. Please sign-up or log in below.</h2>
+    </div>
+
+    <div class="text-center h5 mt-3 mb-4">
+        <div>
+            <a href="{% url 'account_signup' %}" class="btn btn-secondary">Sign-Up</a>
+        </div>
+        <div>
+            <a href="{% url 'account_login' %}" class="btn btn-secondary">Log In</a>
+        </div>
+    </div>
+
+</div>
 
 {% endblock %}
