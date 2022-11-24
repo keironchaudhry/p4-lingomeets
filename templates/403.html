@@ -9,16 +9,11 @@
 <div class="container-fluid">
 
     <div class="text-center mt-3">
-        <h2>You are not authorized to proceed. Please sign-up or log in below.</h2>
+        <h2>Oops... something went wrong.</h2>
     </div>
 
     <div class="text-center h5 mt-3 mb-4">
-        <div>
-            <a href="{% url 'account_signup' %}" class="btn btn-secondary">Sign-Up</a>
-        </div>
-        <div>
-            <a href="{% url 'account_login' %}" class="btn btn-secondary">Log In</a>
-        </div>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Back to home</a>
     </div>
 
 </div>
