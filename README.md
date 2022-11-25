@@ -349,7 +349,33 @@ To be added
 
 ## **Code Validation**
 
-To be added
+* **W3C HTML Code Validator**
+
+    * Each page of the deployed website was run through the [HTML Markup Validation Service](https://validator.w3.org/) and returned no errors.
+
+* **W3C CSS Jigsaw Validator**
+
+    * CSS code was tested with [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) via direct input and returned no errors.
+
+    ![css-validator](/documents/readme_images/css%20validator%20.jpg)
+
+* **JSHint validator**
+
+    * No custom JavaScript code has been written for this project, only what is included with Bootstrap4. 
+
+* **Python Validator**
+
+    * All Python files across the application returned no errors.
+
+    ** <u>**NOTE**</u> **
+
+    * At the time of testing (25/11/2022), the [PEP8 Online Service](http://pep8online.com/) has been down.
+    * In order to carry out effective validation of standardised Python, the following was done in the GitPod terminal:
+        * Run the command `pip3 install pycodestyle`. It may be that this is already installed by default, that being the case, the requirement is met and nothing will happen.
+        * Press CTRL+Shift+P (or Cmd+Shift+P on Mac) and type `linter` into the search tab that appears.
+        * Click on `Python: Select Linter` from the filtered results.
+        * Select `pycodestyle` from the list.
+        * PEP8 errors will now be underlined in red and shall also appear in the `PROBLEMS` part of the terminal.
 
 
 # **Bugs during development** 
