@@ -309,7 +309,7 @@ This project contains the following resources:
 
 ## **Testing User Stories**
 
-To be added
+* Testing user stories can be found [here](/documents/testing/testing_user_stories.md).
 
 ## **Automated Testing**
 
