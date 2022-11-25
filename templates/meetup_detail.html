@@ -79,9 +79,7 @@
 
     <!-- Review Pending Message -->
     <div class="text-center h4 mt-3 mb-5">
-        <p>
-            <strong>{{ message }}</strong>
-        </p>
+        <strong>{{ message }}</strong>
     </div>
 
     {% endfor %}
@@ -92,7 +90,6 @@
     {% if review.event == event %}
 
     <div class="text-center mt-4 mb-4">
-
         <!-- User Name And Submit Date -->
         <p class="font-weight-bold">
             <u>@{{ review.user }}
@@ -121,7 +118,6 @@
             <i class="fa-solid fa-star"></i>
             {% endfor %}
         </p>
-
     </div>
 
     {% if review.user == request.user %}
@@ -159,7 +155,9 @@
 
         <!-- User Username -->
         <h5>
-            <strong><em>Posting as: @{{ user.username }}</em></strong>
+            <p>
+                <strong><em>Posting as: @{{ user.username }}</em></strong>
+            </p>
         </h5>
 
         <!-- Crispy Form For Review -->
