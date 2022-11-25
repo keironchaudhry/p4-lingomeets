@@ -321,7 +321,31 @@ To be added
 
 ## **Testing Accessibility and Performance**
 
-To be added
+* Testing for accessibility and performance is managed using the Lighthouse tool in Chrome extension:
+
+    * For Desktop:
+
+    | Section | Performance | Accessibility | Best Practices | SEO |
+    | --- | --- | --- | --- | --- |
+    | Home | 99 | 92 | 83 | 90 |
+    | Past Events | 93 | 93 | 83 | 90 |
+    | Event | 99 | 92 | 83 | 90 |
+    | Sign Up | 99 | 92 | 83 | 89 |
+    | Login | 99 | 92 | 83 | 89 |
+    | User Profile | 99 | 94 | 75 | 90 |
+    | User Settings | 99 | 83 | 83 | 89 |
+
+    * For Mobile devices:
+
+    | Section | Performance | Accessibility | Best Practices | SEO |
+    | --- | --- | --- | --- | --- |
+    | Home | 94 | 92 | 83 | 92 |
+    | Past Events | 94 | 93 | 83 | 92 |
+    | Event | 92 | 92 | 83 | 92 |
+    | Sign Up | 93 | 92 | 83 | 91 |
+    | Login | 93 | 92 | 83 | 91 |
+    | User Profile | 92 | 94 | 75 | 92 |
+    | User Settings | 92 | 83 | 83 | 91 |
 
 ## **Code Validation**
 
