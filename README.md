@@ -39,8 +39,9 @@ Deployed version of this project can be found [here](https://lingomeets.herokuap
     * [Automated Testing](#automated-testing)
     * [Testing Accessibility and Performance](#testing-accessibility-and-performance)
     * [Code Validation](#code-validation)
-* [Bugs during development]()
-* [Unfixed Bugs]()
+* [Bugs during development](#bugs-during-development)
+    * [Fixed Bugs and Solutions](#fixed-bugs-and-solutions)
+    * [Ongoing Bugs](#ongoing-bugs)
 * [Development and Deployment](#development-and-deployment)
     * [Local Deployment](#local-deployment)
     * [Deployment to Heroku](#deployment-to-heroku)
@@ -385,14 +386,37 @@ This project contains the following resources:
         * PEP8 errors will now be underlined in red and shall also appear in the `PROBLEMS` part of the terminal.
 
 
-# **Bugs during development** 
+# **Bugs during development**
 
-To be added during the course of development of project
+## **Fixed bugs and solutions:**
 
-## **Unfixed bugs**
+* URLs failed to load when running the server
 
-To be added upon termination of the project
+    * _Solution: '/' was incorrectly placed before the file path._
 
+* RegexValidator for validating letters-only text would not accept spaces or commas.
+
+    * _Solution: After experimenting with regex validation methods on [regex101](https://regex101.com/), I eventually created a solution which allowed letters, spaces, commas and still raised an error when numbers were used._
+
+* When using smaller screens, the navigation bar felt quite chunky and took up a lot of the screen.
+
+    * _Solution: Modified navbar position to static and created a toggle button for the navbar links for screens tablet size or smaller using Bootstrap._
+
+* Sign-up links fonts were not matching with font size of the rest of the site description, thus appearing incongruent. 
+
+    * _Solution: Discovered that there was a duplicate and therefore conflicting CSS class with conflicting font-sizes. Modified this issue and the font-size became consistent._
+
+* User profile update successful message would not appear or would duplicate.
+
+    * _Solution: Message for-loop needed to be moved outside the profile list for-loop, which allows it be properly displayed at all times._
+
+## **Ongoing bugs:**
+
+*  The developer has discovered bugs and created solutions throughout the development of the project. However some bugs are still present in the finished product. They are the following:
+
+    * In Profile Dashboard for smaller screens (less than 375px), there is a right-side margin issue. 
+
+    * The validate_age function would redirect users to a 500 page rather than simply allowing an error message to happen when redirecting user back to 'user profile'. Therefore, instead of raising a ValidationError if user age is < 18 and > 100, the method returns an empty string, which allows the user to be redirected to the 'user profile' page and registers an empty string as the age input if their input is invalid. Whilst this solved the issue of stopping an error page, the validate_age method *should* raise a ValidationError with a message for the user, therefore the developer still considers the issue an unfixed bug.  
 
 # **Development and deployment**
 
