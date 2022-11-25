@@ -32,7 +32,7 @@ Deployed version of this project can be found [here](https://lingomeets.herokuap
     * [Languages](#languages)
     * [Database Platform and Cloud Storage](#database-platform-and-cloud-storage)
     * [Libraries and other resources](#libraries-and-other-resources)
-* * [Testing](#testing)
+* [Testing](#testing)
     * [Introduction](#introduction)
     * [Testing User Stories](#testing-user-stories)
     * [Automated Testing](#automated-testing)
