@@ -26,8 +26,9 @@ Deployed version of this project can be found [here](https://lingomeets.herokuap
     * [Design Diagram](#design-diagram)
     * [Colour Design](#colour-design)
     * [Fonts](#fonts)
-* [Features]()
-* [Features Left to Implement]()
+* [Features](#features)
+    * [Existing Features](#existing-features)
+    * [Features Left to Implement](#features-left-to-implement)
 * [Technologies and libraries used](#technologies-and-libraries-used)
     * [Languages](#languages)
     * [Database Platform and Cloud Storage](#database-platform-and-cloud-storage)
@@ -242,13 +243,19 @@ This colour palette has been the basis for colour which has been applied through
 
 Font application in this website have been taken from [Google Fonts](https://fonts.google.com/about) and consist principally of the font style **Lora**.
 
+
 # **Features**
 
-To be added
+## **Existing features**
 
-# **Features left to implement**
+Information on existing features can be found on [this page](/documents/features/existing_features.md).
 
-To be added
+## **Features left to implement**
+
+* Payment system so that users can pay for the meetup cost in advance.
+* Ability to connect different profiles so that users can directly "Add friend" or "Connect" with another user.
+* Ability to allow different users to privately message each other.
+* Complete automated testing to 100%.
 
 
 # **Technologies and libraries used**
