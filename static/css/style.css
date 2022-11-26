@@ -251,6 +251,10 @@ header {
     box-shadow: rgba(0, 0, 0, 0.3) 0.5px 0.5px 3px;
 }
 
+.user-avatar img {
+    padding: 2px 2px 2px 2px;
+}
+
 /* Modal Design */
 
 .modal-dialog div {
