@@ -21,24 +21,45 @@ class UserSettings(View):
     to modify user profile information
     """
     def dispatch(self, request, *args, **kwargs):
-        self.profile, __ = Profile.objects.get_or_create(user=request.user)
-        return super(UserSettings, self).dispatch(request, *args, **kwargs)
+        self.profile, __ = Profile.objects.get_or_create(
+            user=request.user
+        )
+        return super(UserSettings, self).dispatch(
+            request,
+            *args,
+            **kwargs
+        )
 
     def get(self, request):
-        context = {'profile': self.profile}
-        return render(request, 'user_settings.html', context)
+        context = {
+            'profile': self.profile
+        }
+        return render(
+            request,
+            'user_settings.html',
+            context
+        )
 
     def post(self, request):
-        form = ProfileForm(request.POST, request.FILES, instance=self.profile)
+        form = ProfileForm(
+            request.POST,
+            request.FILES,
+            instance=self.profile
+        )
 
         if form.is_valid():
             profile = form.save(commit=False)
             profile.save()
 
-            messages.success(request, 'Profile saved successfully.')
+            messages.success(
+                request,
+                'Profile saved successfully.'
+            )
         else:
             messages.error(
                 request,
-                'Profile could not be updated. Please contact admin.'
+                'Please enter validate input.'
                 )
-        return redirect('user_profile')
+        return redirect(
+            'user_settings'
+        )

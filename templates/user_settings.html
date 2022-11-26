@@ -3,6 +3,22 @@
 
 <!-- User Profile Settings -->
 
+<div class="text-center">
+
+    <!-- Success/Failed Update Message -->
+
+    {% if messages %}
+    {% for message in messages %}
+
+    <div class="text-center h4 mt-4">
+        <p>{{ message }}</p>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+
+</div>
+
 <form action="{% url 'user_settings' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container-fluid">
@@ -21,14 +37,16 @@
                     <div class="col-md-6 mb-3">
                         <label for="first_name">First Name</label>
                         <input name="first_name" class="form-control" id="first_name" type="text"
-                            placeholder="Enter your first name (letters only)" value="{{ profile.first_name|default:'' }}" required>
+                            placeholder="Enter your first name (letters only)"
+                            value="{{ profile.first_name|default:'' }}" required>
                     </div>
 
                     <!-- Last Name Input -->
                     <div class="col-md-6 mb-3">
                         <label for="last_name">Last Name</label>
                         <input name="last_name" class="form-control" id="last_name" type="text"
-                            placeholder="Also your last name (letters only)" value="{{ profile.last_name|default:'' }}" required>
+                            placeholder="Also your last name (letters only)" value="{{ profile.last_name|default:'' }}"
+                            required>
                     </div>
 
                     <!-- Birthday Input -->
@@ -36,8 +54,8 @@
                         <label for="birthday">Birthday</label>
                         <div class="form-group">
                             <input name="birthday" data-datepicker="" class="form-control" id="birthday" type="text"
-                                placeholder="Format: mm/dd/yyyy. Users must be over 18." value="{{ profile.birthday|date:'m/d/Y'|default:'' }}"
-                                required>
+                                placeholder="Format: mm/dd/yyyy. Users must be over 18."
+                                value="{{ profile.birthday|date:'m/d/Y'|default:'' }}" required>
                         </div>
                     </div>
 
@@ -65,7 +83,8 @@
                     <div>
                         <form action="" method="post">
                             <label for="bio">Bio</label>
-                            <input name="bio" class="form-control" id="bio" type="text" placeholder="Please enter between 5 and 250 characters"
+                            <input name="bio" class="form-control" id="bio" type="text"
+                                placeholder="Please enter between 5 and 250 characters"
                                 value="{{ profile.bio|default:'' }}" required>
                         </form>
                     </div>
@@ -103,7 +122,8 @@
                 </section>
             </div>
 
-            <div class="text-center mb-4">
+            <!-- Save All Button -->
+            <div class="text-center mb-3">
                 <button type="submit" class="btn btn-secondary">Save All</button>
             </div>
 
@@ -111,5 +131,11 @@
     </div>
 
 </form>
+
+<!-- Back Button -->
+<div class="text-center mb-4">
+    <a href="{% url 'user_profile' %}" class="btn btn-secondary">&laquo; Back</a>
+</div>
+
 
 {% endblock %}
