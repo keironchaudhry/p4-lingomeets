@@ -2,7 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from datetime import date
-from lingomeets.validators import validate_textfields, validate_only_letters, validate_birthday
+from lingomeets.validators import (
+    validate_textfields,
+    validate_only_letters,
+    validate_birthday,
+)
 
 
 class Profile(models.Model):
