@@ -22,10 +22,14 @@ def validate_textfields(value):
         pass
 
 
-def validate_age(age):
-    if age < 17:
-        return ''
-    elif age > 101:
-        return ''
+def validate_birthday(value):
+    if value.year > 2004:
+        raise ValidationError(
+            'LingoMeets members must be over 18 to attend events.'
+        )
+    elif value.year < 1920:
+        raise ValidationError(
+            'Please enter a valid age.'
+        )
     else:
-        return True
+        pass

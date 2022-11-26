@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from datetime import date
-from lingomeets.validators import validate_textfields, validate_age, validate_only_letters
+from lingomeets.validators import validate_textfields, validate_only_letters, validate_birthday
 
 
 class Profile(models.Model):
@@ -29,7 +29,8 @@ class Profile(models.Model):
     )
     birthday = models.DateField(
         null=True,
-        blank=True
+        blank=True,
+        validators=[validate_birthday]
     )
     avatar = CloudinaryField(
         'avatar',
@@ -72,8 +73,7 @@ class Profile(models.Model):
                     self.birthday.month, self.birthday.day
                     )
             )
-            if validate_age(age):
-                return age
+            return age
         else:
             return ''
 
