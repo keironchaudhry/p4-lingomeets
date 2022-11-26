@@ -172,7 +172,7 @@
     * Features a circle image container for user avatar.
     * Contains a button to redirect user to user settings.
 
-    ![user-profile-page](/documents/readme_images/user%20profile%20.jpg)
+    ![user-profile-page](/documents/readme_images/user%20profile.jpg)
 
 * # User Profile Settings design: 
 
@@ -187,8 +187,9 @@
         * About
     * Features a file input where user can upload a profile photo.
         * Contains a description of the image size and file type to be uploaded for user information.
-    * Features a "Save all" button which updates the information database and redirects user back to the profile page.
+    * Features a "Save all" button which updates the information database.
     * A success message appears upon updating information to inform the user that a successful update has occurred.
+    * Features a "Back" button to direct user back to user profile.
 
     ![user-settings-top](/documents/readme_images/user%20settings%201.jpg)
     ![user-settings-bottom](/documents/readme_images/user%20settings%202.jpg)

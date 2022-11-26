@@ -55,7 +55,7 @@
     ![next-pagination](/documents/readme_images/next%20button.jpg)
     ![back-pagination](/documents/readme_images/back%20button.jpg)
     * Authenticated users can view their own profile.
-    ![user-profile](/documents/readme_images/user%20profile%20view.jpg)
+    ![user-profile](/documents/readme_images/user%20profile.jpg)
     * Authenticated users can modify their profile by updating their profile settings.
     ![user-settings](/documents/readme_images/user%20settings%201.jpg)
     ![user-settings-2](/documents/readme_images/user%20settings%202.jpg)
