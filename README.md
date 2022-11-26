@@ -410,13 +410,17 @@ This project contains the following resources:
 
     * _Solution: Message for-loop needed to be moved outside the profile list for-loop, which allows it be properly displayed at all times._
 
+* Validate_age function would not correctly raise a ValidationError and would crash website.
+
+    * _(26/11/2022) Solution: In order to correctly raise a ValidationError, the developer created a validate-birthday function, which took the user value and made sure it was not any year before 1920 and not beyond any year past 2004. This was inserted into the birthday object of the profile model as a validator. This then either raises a ValidationError correctly, without crashing the page or passes the correct value, and that validated value can then get parsed through the get-age function, which successfully returns the user age._
+
 ## **Ongoing bugs:**
 
 *  The developer has discovered bugs and created solutions throughout the development of the project. However some bugs are still present in the finished product. They are the following:
 
     * In Profile Dashboard for smaller screens (less than 375px), there is a right-side margin issue. 
 
-    * The validate_age function would redirect users to a 500 page rather than simply allowing an error message to happen when redirecting user back to 'user profile'. Therefore, instead of raising a ValidationError if user age is < 18 and > 100, the method returns an empty string, which allows the user to be redirected to the 'user profile' page and registers an empty string as the age input if their input is invalid. Whilst this solved the issue of stopping an error page, the validate_age method *should* raise a ValidationError with a message for the user, therefore the developer still considers the issue an unfixed bug.  
+    * (26/11/2022, Issue fixed) <del>The validate_age function would redirect users to a 500 page rather than simply allowing an error message to happen when redirecting user back to 'user profile'. Therefore, instead of raising a ValidationError if user age is < 18 and > 100, the method returns an empty string, which allows the user to be redirected to the 'user profile' page and registers an empty string as the age input if their input is invalid. Whilst this solved the issue of stopping an error page, the validate_age method *should* raise a ValidationError with a message for the user, therefore the developer still considers the issue an unfixed bug.</del>
 
 # **Development and deployment**
 
