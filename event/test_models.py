@@ -25,7 +25,10 @@ class TestEventModel(TestCase):
         )
 
     def test_event_model_string_method_returns_string(self):
-        event = Event.objects.get(title='Dummy Event title')
+        event = Event.objects.get(
+            title='Dummy Event title'
+        )
         self.assertEqual(
-            str(event), 'Dummy Event title'
+            str(event),
+            'Dummy Event title'
         )

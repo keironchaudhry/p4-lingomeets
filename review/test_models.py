@@ -42,7 +42,8 @@ class TestReviewModel(TestCase):
             content='Test content'
         )
         self.assertEqual(
-            str(review), 'Review: Test content by test_user'
+            str(review),
+            'Review: Test content by test_user'
         )
 
     def test_get_range_method_returns_rating(self):
@@ -62,6 +63,14 @@ class TestReviewModel(TestCase):
             rating=3,
             content='Test content'
         )
-        self.assertEqual(review.rating, 3)
-        get_range = range(review.rating)
-        self.assertEqual(get_range, range(0, 3))
+        self.assertEqual(
+            review.rating,
+            3
+        )
+        get_range = range(
+            review.rating
+        )
+        self.assertEqual(
+            get_range,
+            range(0, 3)
+        )

@@ -7,5 +7,11 @@ class TestHomePage(TestCase):
         response = self.client.get(
             '/'
         )
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'index.html')
+        self.assertEqual(
+            response.status_code,
+            200
+        )
+        self.assertTemplateUsed(
+            response,
+            'index.html'
+        )

@@ -27,16 +27,26 @@ class MeetupView(View):
         GET method to get meetup post and reviews
         """
         queryset = Event.objects
-        event = get_object_or_404(queryset, slug=slug)
+        event = get_object_or_404(
+            queryset,
+            slug=slug
+        )
 
-        reviews = event.reviews.filter(is_admin_approved=True)
+        reviews = event.reviews.filter(
+            is_admin_approved=True
+        )
         reviewed = False
 
         if not reviews:
-            messages.info(request, 'There are currently no reviews.')
+            messages.info(
+                request,
+                'There are currently no reviews.'
+            )
 
         attending = False
-        if event.attendees.filter(id=request.user.id).exists():
+        if event.attendees.filter(
+            id=request.user.id
+        ).exists():
             attending = True
 
         review_form = ReviewForm()
@@ -58,22 +68,33 @@ class MeetupView(View):
         POST method for users to post reviews
         """
         queryset = Event.objects
-        event = get_object_or_404(queryset, slug=slug)
+        event = get_object_or_404(
+            queryset,
+            slug=slug
+        )
 
-        reviews = event.reviews.filter(is_admin_approved=True)
+        reviews = event.reviews.filter(
+            is_admin_approved=True
+        )
         reviewed = False
 
         attending = False
-        if event.attendees.filter(id=request.user.id).exists():
+        if event.attendees.filter(
+            id=request.user.id
+        ).exists():
             attending = True
 
-        review_form = ReviewForm(data=request.POST)
+        review_form = ReviewForm(
+            data=request.POST
+        )
 
         if (not reviewed):
             if review_form.is_valid():
                 review_form.instance.email = request.user.email
                 review_form.instance.name = request.user.username
-                review = review_form.save(commit=False)
+                review = review_form.save(
+                    commit=False
+                )
                 review.event = event
                 review.user = request.user
                 review.save()
@@ -82,7 +103,10 @@ class MeetupView(View):
                     'Your review is being approved. Thank you.'
                 )
                 return HttpResponseRedirect(
-                    reverse('meetup_detail', args=[slug])
+                    reverse(
+                        'meetup_detail',
+                        args=[slug]
+                    )
                 )
             else:
                 return render(
@@ -124,12 +148,21 @@ class AttendeeRegistration(View):
         POST method for registering attendees
         """
         queryset = Event.objects
-        event = get_object_or_404(queryset, slug=slug)
+        event = get_object_or_404(
+            queryset,
+            slug=slug
+        )
 
-        if event.attendees.filter(id=request.user.id).exists():
-            event.attendees.remove(request.user)
+        if event.attendees.filter(
+            id=request.user.id
+        ).exists():
+            event.attendees.remove(
+                request.user
+            )
         else:
-            event.attendees.add(request.user)
+            event.attendees.add(
+                request.user
+            )
 
         return HttpResponseRedirect(
             reverse(

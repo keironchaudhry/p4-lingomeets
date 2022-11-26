@@ -146,7 +146,8 @@ class TestEventViews(TestCase):
             title='Dummy Event title'
         )
         self.assertEqual(
-            event.title, 'Dummy Event title'
+            event.title,
+            'Dummy Event title'
         )
         response = self.client.post(
             f'/event/register/{event.slug}'
