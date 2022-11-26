@@ -87,8 +87,8 @@
     * This page features a form which requests the users email address.
     * Upon entering the user email address, a success message informs the user that it has been sent.
 
-    ![reset-password-page]()
-    ![reset-password-success]()
+    ![reset-password-page](/documents/readme_images/password%20reset.jpg)
+    ![reset-password-success](/documents/readme_images/password%20reset%20done.jpg)
 
 
 * # Past-Events page design:
