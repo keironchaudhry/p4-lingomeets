@@ -80,7 +80,7 @@ This is project is the fourth in a series of five milestone projects which are t
     * To be able to register to/deregister from an event as a user
     * To be able to reset password
     * To be able to change password
-    * To handle errors: page 404 'Not Found', page 500 'Internal Server Error' and page 401 'Unauthorised'.
+    * To handle errors: 401 page 'Unauthorised', 403 page 'Forbidden Error', 404 page 'Not Found' and page 500 'Internal Server Error'.
 
 * **Content Requirements**
 
