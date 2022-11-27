@@ -27,8 +27,11 @@ Deployed version of this project can be found [here](https://lingomeets.herokuap
     * [Colour Design](#colour-design)
     * [Fonts](#fonts)
 * [Features](#features)
+    * [CRUD Operations]()
     * [Existing Features](#existing-features)
+    * [Defense Design]()
     * [Features Left to Implement](#features-left-to-implement)
+* [Data Validation](#data-validation)
 * [Technologies and libraries used](#technologies-and-libraries-used)
     * [Languages](#languages)
     * [Database Platform and Cloud Storage](#database-platform-and-cloud-storage)
@@ -257,6 +260,62 @@ Information on existing features can be found on [this page](/documents/features
 * Ability to connect different profiles so that users can directly "Add friend" or "Connect" with another user.
 * Ability to allow different users to privately message each other.
 * Complete automated testing to 100%.
+
+
+# **Data Validation**
+
+* **Review**
+
+    * Review content cannot be less than <5 characters else site shall raise an error.
+    * Content cannot exceed any more than >250 character else site shall raise an error.
+    * Rating is automatically defaulted at 3 stars so as to not leave blank.
+    * User reviews that are submitted require admin approval before publishing.
+
+    ![less-characters](/documents/readme_images/5%20characters%20error.jpg)
+    ![more-characters](/documents/readme_images/250%20character%20limit.jpg)
+
+* **Profile Information**
+
+    * All empty input upon making a profile have default placeholders to inform user of requirements.
+
+    ![placeholders](/documents/readme_images/placeholder%20warnings.jpg)
+
+    * All input fields are required before updating profile information.
+
+    ![required-fields](/documents/readme_images/missing%20field%20warning.jpg)
+
+    * _Native language_, _other language(s)_, _firstname_ and _lastname_ fields are letter only fields and will raise an error if any integers are submitted by the user.
+
+    ![first-name-input](/documents/readme_images/invalid%20input%20first%20name.jpg)
+    ![last-name-input](/documents/readme_images/invalid%20input%20first%20last.jpg)
+    ![native-input](/documents/readme_images/invalid%20input%20native%20language.jpg)
+    ![other-input](/documents/readme_images/invalid%20input%20other%20languages.jpg)
+
+    * _Birthday_ input field will not accept any date beyond <1922 and any date greater than >2004.
+
+        * The validated input value is then used in a 'get_age' method to calculate an age and display on the user profile. 
+    
+    ![birthday-input](/documents/readme_images/invalid%20input%20birthday.jpg)
+
+    * _Bio_ input field will not accept any integers and requires characters greater than 5 and lower than 250.
+
+    ![bio-input](/documents/readme_images/invalid%20input%20bio.jpg)
+
+    * All these aforementioned inputs will raise an error upon submission which warns the user, and the inputs will not update.
+
+    ![error-page](/documents/readme_images/error%20message.jpg)
+
+* **Sign Up Page**
+
+    * System will not allow non-registered users to create an account with a conflictive username or email.
+
+    ![sign-up-validation](/documents/readme_images/sign%20up%20user%20exists.jpg)
+
+* **Sign In Page**
+
+    * System does not accept any username or password that is non-existent or incorrect.
+
+    ![sign-in-validation](/documents/readme_images/sign%20in%20validation.jpg)
 
 
 # **Technologies and libraries used**
