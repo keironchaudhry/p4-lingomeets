@@ -256,25 +256,53 @@ Information on existing features can be found on [this page](/documents/features
 
 ## **CRUD Operations**
 
-| Operations | All users | Auth. Users | Superusers |
+| **Operations** | All users | Auth. Users | Superusers |
 | --- | --- | --- | --- |
-| View Home Page | Yes | Yes | Yes |
-| View Upcoming Event | Yes | Yes | Yes |
-| View Past Events | Yes | Yes | Yes |
-| View Event Details | Yes | Yes | Yes |
-| View User Reviews | Yes | Yes | Yes |
-| Add/Edit/Delete Event | No | No | Yes |
-| Register/Deregister To Event | No | Yes | Yes |
-| Add/Edit/Delete Registry To Event | No | No | Yes |
-| Add/Edit/Delete Reviews | No | Yes | Yes |
-| View Profile | No | Yes | Yes |
-| Edit Profile | No | Yes | Yes |
-| Add/Edit/Delete Profile | No | No | Yes |
-| Login | No | Yes | Yes |
-| Register | Yes | No | No |
+| **View Home Page** | Yes | Yes | Yes |
+| **View Upcoming Event** | Yes | Yes | Yes |
+| **View Past Events** | Yes | Yes | Yes |
+| **View Event Details** | Yes | Yes | Yes |
+| **View User Reviews** | Yes | Yes | Yes |
+| **Add/Edit/Delete Event** | No | No | Yes |
+| **Register/Deregister To Event** | No | Yes | Yes |
+| **Add/Edit/Delete Registry To Event** | No | No | Yes |
+| **Add/Edit/Delete Reviews** | No | Yes | Yes |
+| **View Profile** | No | Yes | Yes |
+| **Edit Profile** | No | Yes | Yes |
+| **Add/Edit/Delete Profile** | No | No | Yes |
+| **Login** | No | Yes | Yes |
+| **Register** | Yes | No | No |
 
 
 ## **Defense Design**
+
+* Delete operations
+
+    * Delete button summons a modal:
+
+        * Which asks the user if they are sure to delete their review.
+        * Which also gives them the option to return back.
+
+    ![delete-modal](/documents/readme_images/responsive%20modal%20design%20example.jpg)
+
+    * Review status
+
+        * Reviews can only be made by authenticated users.
+        * Authenticated users must have been registered to an event in the past to be able to make a review. This means reviewers cannot leave reviews for events they did not ever attend.
+        * Upcoming events can not be reviewed since they have not yet come to pass. 
+        * Admin must approve any review made by any users.
+
+            * In case it is not approved, it will be deleted from database.
+            * If approved, it will then appear in review section of the specific event.
+    
+    * User Event Registration
+
+        * Authenticated users can register and deregister to an event.
+        * Registered users appear in the admin panel.
+        * Admin has total control over who can attend an event.
+    
+    ![admin-registry](/documents/readme_images/admin%20event%20registry.jpg)
+
 
 ## **Features left to implement**
 
