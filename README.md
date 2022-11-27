@@ -27,9 +27,9 @@ Deployed version of this project can be found [here](https://lingomeets.herokuap
     * [Colour Design](#colour-design)
     * [Fonts](#fonts)
 * [Features](#features)
-    * [CRUD Operations]()
     * [Existing Features](#existing-features)
-    * [Defense Design]()
+    * [CRUD Operations](#crud-operations)
+    * [Defense Design](#defense-design)
     * [Features Left to Implement](#features-left-to-implement)
 * [Data Validation](#data-validation)
 * [Technologies and libraries used](#technologies-and-libraries-used)
@@ -253,6 +253,28 @@ Font application in this website have been taken from [Google Fonts](https://fon
 ## **Existing features**
 
 Information on existing features can be found on [this page](/documents/features/existing_features.md).
+
+## **CRUD Operations**
+
+| Operations | All users | Auth. Users | Superusers |
+| --- | --- | --- | --- |
+| View Home Page | Yes | Yes | Yes |
+| View Upcoming Event | Yes | Yes | Yes |
+| View Past Events | Yes | Yes | Yes |
+| View Event Details | Yes | Yes | Yes |
+| View User Reviews | Yes | Yes | Yes |
+| Add/Edit/Delete Event | No | No | Yes |
+| Register/Deregister To Event | No | Yes | Yes |
+| Add/Edit/Delete Registry To Event | No | No | Yes |
+| Add/Edit/Delete Reviews | No | Yes | Yes |
+| View Profile | No | Yes | Yes |
+| Edit Profile | No | Yes | Yes |
+| Add/Edit/Delete Profile | No | No | Yes |
+| Login | No | Yes | Yes |
+| Register | Yes | No | No |
+
+
+## **Defense Design**
 
 ## **Features left to implement**
 
