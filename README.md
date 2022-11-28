@@ -153,7 +153,7 @@ Learning languages can be an arduous task, and to be able maintain several langu
 
 ## **Website Structure**
 
-* Website is structured into 8 pages
+* Website is structured into 9 principal pages
 * All pages extend the same base therefore producing a consistent style across the application
 * Pages are the following:
 
@@ -449,7 +449,7 @@ This project contains the following resources:
     | Event | 99 | 92 | 83 | 90 |
     | Sign Up | 99 | 92 | 83 | 89 |
     | Login | 99 | 92 | 83 | 89 |
-    | User Profile | 99 | 94 | 75 | 90 |
+    | User Profile | 99 | 92 | 83 | 90 |
     | User Settings | 99 | 83 | 83 | 89 |
 
     * For Mobile devices:
@@ -461,7 +461,7 @@ This project contains the following resources:
     | Event | 92 | 92 | 83 | 92 |
     | Sign Up | 93 | 92 | 83 | 91 |
     | Login | 93 | 92 | 83 | 91 |
-    | User Profile | 92 | 94 | 75 | 92 |
+    | User Profile | 91 | 94 | 83 | 92 |
     | User Settings | 92 | 83 | 83 | 91 |
 
 ## **Code Validation**
