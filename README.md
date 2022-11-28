@@ -12,6 +12,14 @@ Python (+Django Framework), JavaScript, HTML5 and CSS3.
 
 Deployed version of this project can be found [here](https://lingomeets.herokuapp.com/).
 
+**Test Accounts**
+
+* For the purposes of testing the website and examining its features, test accounts have been created.
+
+* Test accounts allow for testing of website features such as editing any pre-made testing features, such as pre-made reviews and ratings, creating reviews in general, deleting pre-made reviews and registering/deregistering to an event.
+
+* A test account can be given upon request. 
+
 
 ## **Table of content**
 
