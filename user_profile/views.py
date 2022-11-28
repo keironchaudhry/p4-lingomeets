@@ -15,6 +15,8 @@ class UserProfile(generic.ListView):
     template_name = 'user_profile.html'
 
 
+# https://themesberg.com/blog/django/user-profile-tutorial
+# The above source was useful guidance in creating a user profile
 class UserSettings(View):
     """
     View for user settings used
@@ -46,7 +48,6 @@ class UserSettings(View):
             request.FILES,
             instance=self.profile
         )
-
         if form.is_valid():
             profile = form.save(commit=False)
             profile.save()

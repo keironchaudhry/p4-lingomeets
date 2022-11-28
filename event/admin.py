@@ -23,7 +23,7 @@ class EventAdmin(admin.ModelAdmin):
     list_filter = [
         'created_on'
     ]
-    # https://stackoverflow.com/questions/27676507/django-admin-panel-with-filter-horizontal 
+    # https://stackoverflow.com/questions/27676507/django-admin-panel-with-filter-horizontal
     filter_horizontal = (
         'attendees',
     )
