@@ -1,21 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="text-center">
+<!-- User Profile -->
 
-    <!-- Success/Failed Update Message -->
+<!-- Success/Failed Update Message -->
 
-    {% if messages %}
-    {% for message in messages %}
+{% if messages %}
+{% for message in messages %}
 
-    <div class="text-center h4 mt-4">
-        <p>{{ message }}</p>
-    </div>
-
-    {% endfor %}
-    {% endif %}
-
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
+
+{% endfor %}
+{% endif %}
+
 
 {% for profile in profile_list %}
 {% if user == profile.user %}

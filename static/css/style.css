@@ -255,6 +255,10 @@ header {
     padding: 2px 2px 2px 2px;
 }
 
+.user-settings-alert {
+    margin-bottom: 0;
+}
+
 /* Modal Design */
 
 .modal-dialog div {

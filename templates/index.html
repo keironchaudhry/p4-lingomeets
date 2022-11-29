@@ -4,17 +4,19 @@
 <!-- Landing Page -->
 
 <!-- Success Message For Login And Logout -->
+
+{% if messages %}
+{% for message in messages %}
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+{% endif %}
+
 <div class="container-fluid">
-
-    {% if messages %}
-        {% for message in messages %}
-
-        <div class="text-center h3 mt-3">
-            <p>{{ message.message }}</p>
-        </div>
-
-        {% endfor %}
-    {% endif %}
 
     <div class="text-center">
 
@@ -40,7 +42,8 @@
 
         <!-- Description -->
         <div class="container-fluid col-md-10 mt-3 landing-page-description">
-            <p>Welcome to <strong>LingoMeets <i class="fa-sharp fa-solid fa-language"></i></strong>, a place for language enthusiasts from around
+            <p>Welcome to <strong>LingoMeets <i class="fa-sharp fa-solid fa-language"></i></strong>, a place for
+                language enthusiasts from around
                 the globe!
             </p>
             <p>We make the event, and you network with other likeminded learners.</p>
@@ -56,7 +59,7 @@
 <section class="container-fluid text-center mt-5 mb-3">
 
     <!-- Event Title -->
-    
+
     <h3 class="text-center mt-3">
         <strong>
             <u>LingoMeets Meet-Up: {{ event.title }}</u>
@@ -90,7 +93,7 @@
 
     <!-- Sign In/Login -->
     <div class="landing-page-description sign-up-links">
-        <p>Come join us by <a href="{% url 'account_signup' %}"><strong>signing up now,</strong></a> 
+        <p>Come join us by <a href="{% url 'account_signup' %}"><strong>signing up now,</strong></a>
             or <a href="{% url 'account_login' %}"><strong>log-in!</strong></a>
         </p>
     </div>

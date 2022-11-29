@@ -3,21 +3,18 @@
 
 <!-- User Profile Settings -->
 
-<div class="text-center">
+<!-- Success/Failed Update Message -->
 
-    <!-- Success/Failed Update Message -->
+{% if messages %}
+{% for message in messages %}
 
-    {% if messages %}
-    {% for message in messages %}
-
-    <div class="text-center h4 mt-4">
-        <p>{{ message }}</p>
-    </div>
-
-    {% endfor %}
-    {% endif %}
-
+<div class="alert alert-success alert-dismissible fade show user-settings-alert" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
+
+{% endfor %}
+{% endif %}
 
 <form action="{% url 'user_settings' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}

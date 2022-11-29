@@ -37,12 +37,6 @@ class MeetupView(View):
         )
         reviewed = False
 
-        if not reviews:
-            messages.info(
-                request,
-                'There are currently no reviews.'
-            )
-
         attending = False
         if event.attendees.filter(
             id=request.user.id
