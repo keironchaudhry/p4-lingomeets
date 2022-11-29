@@ -46,11 +46,11 @@
     * Authenticated users are able to modify and delete a review they have made.
     ![review-button](/documents/readme_images/edit%20or%20delete%20review.jpg)
     * All users are informed with messages that their action has been complete (such as making a review, logging in and out etc.)
-    ![login-success](/documents/readme_images/signed%20in%20message.jpg)
-    ![logout-success](/documents/readme_images/signed%20out%20message.jpg)
+    ![login-success](/documents/readme_images/profile%20page.jpg)
+    ![logout-success](/documents/readme_images/signed%20out%20landing%20page.jpg)
     ![review-success](/documents/readme_images/review%20being%20approved%20message.jpg)
-    ![profile-success](/documents/readme_images/profile%20saved%20message.jpg)
-    ![profile-fail](/documents/readme_images/profile%20fail%20message.jpg)
+    ![profile-success](/documents/readme_images/profile%20saved.jpg)
+    ![profile-fail](/documents/readme_images/error%20message.jpg)
     * Past events are continuously paginated as they grow in number.
     ![next-pagination](/documents/readme_images/next%20button.jpg)
     ![back-pagination](/documents/readme_images/back%20button.jpg)
