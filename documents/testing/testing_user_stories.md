@@ -74,7 +74,7 @@
 
         * First-time visitors immediately land on the home page that gives concise and clear information about the website's purpose.
         ![landing-page](/documents/readme_images/landing-page.jpg)
-        ![landing-page-2](/documents/readme_images/landing-page-2.jpg)
+        ![landing-page-2](/documents/readme_images/landing%20page%202.jpg)
         * A sign-up ability is available for first-time visitors to become regular users.
         ![sign-up](/documents/readme_images/sign%20up%20page.jpg)
         * A navigation bar is made clear and available for first-time visitors to navigate the website with ease. 
