@@ -275,9 +275,7 @@ Information on existing features can be found on [this page](/documents/features
 | **Register/Deregister To Event** | No | Yes | Yes |
 | **Add/Edit/Delete Registry To Event** | No | No | Yes |
 | **Add/Edit/Delete Reviews** | No | Yes | Yes |
-| **View Profile** | No | Yes | Yes |
-| **Edit Profile** | No | Yes | Yes |
-| **Add/Edit/Delete Profile** | No | No | Yes |
+| **Add/Edit/Delete Profile** | No | Yes | Yes |
 | **Login** | No | Yes | Yes |
 | **Register** | Yes | No | No |
 
