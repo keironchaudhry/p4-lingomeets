@@ -23,7 +23,7 @@ Deployed version of this project can be found [here](https://lingomeets.herokuap
 
 ## **Table of content**
 
-* [Project Purpose](#purpose-of-project)
+* [Project Purpose](#project-purpose)
 * [UX](#ux)
     * [Project Scope](#project-scope)
     * [Strategy](#strategy)
