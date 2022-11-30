@@ -1,6 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.views import generic, View
 from django.shortcuts import render, reverse, get_object_or_404
+from django.contrib import messages
 from event.models import Event
 from .models import Review
 
@@ -17,7 +18,10 @@ class EditReview(generic.UpdateView):
     def get_success_url(self) -> str:
 
         slug = self.object.event.slug
-        return reverse('meetup_detail', args=[slug])
+        return reverse(
+            'meetup_detail',
+            args=[slug]
+        )
 
 
 class DeleteReview(View):
@@ -25,9 +29,25 @@ class DeleteReview(View):
     View for deleting a user-made review
     and returning to meetup detail page
     """
+
     def post(self, request, slug, *args, **kwargs):
-        event = get_object_or_404(Event, slug=slug)
-        review = Review.objects.filter(user=request.user)
+        event = get_object_or_404(
+            Event,
+            slug=slug
+        )
+        review = Review.objects.filter(
+            user=request.user
+        )
         review.delete()
 
-        return HttpResponseRedirect(reverse('meetup_detail', args=[slug]))
+        messages.success(
+            request,
+            'Review deleted successfully.'
+        )
+
+        return HttpResponseRedirect(
+            reverse(
+                'meetup_detail',
+                args=[slug]
+            )
+        )
