@@ -190,10 +190,12 @@
     * Features a "Save all" button which updates the information database.
     * A success message appears upon updating information to inform the user that a successful update has occurred.
     * Features a "Back" button to direct user back to user profile.
+    * Features a "Delete Profile" button so that user has the choice to erase their profile.
 
     ![user-settings-top](/documents/readme_images/user%20settings%201.jpg)
     ![user-settings-bottom](/documents/readme_images/user%20settings%202.jpg)
     ![user-settings-saved](/documents/readme_images/profile%20saved.jpg)
+    ![user-settings-delete](/documents/readme_images/delete%20profile%20button.jpg)
 
 
 * # Admin Panel:
