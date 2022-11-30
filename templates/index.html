@@ -35,19 +35,21 @@
         </div>
 
         <!-- Hero Image -->
-        <div class="container col-md-10">
+        <div class="container col-md-10 mb-5">
             <img src="https://res.cloudinary.com/twiggygnome/image/upload/v1667587084/lingo-meets%20images/languages-around-the-world_ow3vca.png"
                 class="img-fluid hero-image" alt="Hero Image">
         </div>
 
         <!-- Description -->
-        <div class="container-fluid col-md-10 mt-3 landing-page-description">
+        <div class="container-fluid col-md-10 mt-3 landing-page-description sign-up-links">
             <p>Welcome to <strong>LingoMeets <i class="fa-sharp fa-solid fa-language"></i></strong>, a place for
                 language enthusiasts from around
                 the globe!
             </p>
             <p>We make the event, and you network with other likeminded learners.</p>
-            <p>Don't miss out on our next meet-up!</p>
+            <p>We plan our meet-ups by organising the destination, accomodation, activities and daily-plan,
+                and link up and introduce all LingoMeets members so that they can thrive in their linguistic practise.</p>
+            <p><a href="{% url 'account_signup' %}"><strong>Sign up now</strong></a>, make your profile and don't miss out on our next meet-up!</p>
         </div>
 
     </div>
@@ -62,7 +64,7 @@
 
     <h3 class="text-center mt-3">
         <strong>
-            <u>LingoMeets Meet-Up: {{ event.title }}</u>
+            <u>Upcoming LingoMeets Meet-Up: {{ event.title }}</u>
         </strong>
     </h3>
 
