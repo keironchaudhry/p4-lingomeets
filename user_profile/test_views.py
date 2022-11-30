@@ -117,3 +117,27 @@ class TestProfileViews(TestCase):
             response,
             'user_profile.html'
         )
+
+    def test_user_can_delete_profile(self):
+        user = self.client.login(
+            username='test_user',
+            password='test_password'
+        )
+        profile = Profile.objects.get(
+            bio='Test Bio'
+        )
+        self.client.post(
+            f'/user_profile/user_settings/',
+            {'bio': 'Test Bio'}
+        )
+        self.assertEqual(
+            profile.bio,
+            'Test Bio'
+        )
+        response = self.client.post(
+            f'/user_profile/{profile.id}/delete_profile/'
+        )
+        self.assertRedirects(
+            response,
+            '/'
+        )
