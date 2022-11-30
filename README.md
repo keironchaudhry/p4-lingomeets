@@ -429,7 +429,7 @@ This project contains the following resources:
 
 ## **Automated Testing**
 
-* 18 automated tests have been implemented.
+* 19 automated tests have been implemented.
 * Automated tests were carried out during the creation of website functions and classes.
 * The tool use to measure coverage of code was the Coverage.py tool.
 * To check coverage in the HTML format run in the terminal:
