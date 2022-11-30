@@ -17,4 +17,9 @@ urlpatterns = [
         login_required(views.UserSettings.as_view()),
         name='user_settings'
     ),
+    path(
+        '<pk>/delete_profile/',
+        login_required(views.DeleteProfile.as_view()),
+        name='delete_profile'
+    ),
 ]

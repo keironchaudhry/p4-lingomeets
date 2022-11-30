@@ -130,9 +130,15 @@
 </form>
 
 <!-- Back Button -->
-<div class="text-center mb-4">
+<div class="text-center mb-3">
     <a href="{% url 'user_profile' %}" class="btn btn-secondary">&laquo; Back</a>
 </div>
 
+<!-- Delete Profile Button -->
+<form action="{% url 'delete_profile' user.id %}" method="post" class="text-center mb-4">
+    {% csrf_token %}
+    <button type="submit" name="profile_id" value="{{user.id}}"
+        class="btn btn-danger">Delete profile</button>
+</form>
 
 {% endblock %}

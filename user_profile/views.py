@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.views import generic, View
 from .forms import ProfileForm
@@ -63,4 +64,26 @@ class UserSettings(View):
                 )
         return redirect(
             'user_settings'
+        )
+
+
+class DeleteProfile(View):
+    """
+    View for deleting a user profiles
+    and returns user to home page
+    """
+    def post(self, request, *args, **kwargs):
+        profile = Profile.objects.filter(
+            user=request.user
+        )
+        profile.delete()
+
+        messages.success(
+                request,
+                'Profile deleted successfully.'
+            )
+        return HttpResponseRedirect(
+            reverse(
+                'home'
+            )
         )

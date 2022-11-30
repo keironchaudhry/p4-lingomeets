@@ -260,6 +260,17 @@ header {
     margin-bottom: 0;
 }
 
+.btn-danger {
+    font-size: 17.5px;
+}
+
+.btn-danger:hover {
+    transform: scale(1.1);
+    transition: 50ms;
+    letter-spacing: 1px;
+    background-color: #8B0000;
+}
+
 /* Modal Design */
 
 .modal-dialog div {
