@@ -45,16 +45,23 @@ ALLOWED_HOSTS = ['lingomeets.herokuapp.com', 'localhost']
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-# https://stackoverflow.com/questions/71157889/allauth-dont-send-verification-emails-django
+"""
+https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/de7ad2067ac1b5de37a4cd8b9f4ddf572a4bf6c7/boutique_ado/settings.py#L209-L219
+Reached out to others on Slack about this issue,
+was recommended to study how the settings.py from
+'Boutique Ado' was set to solve the problem.
+"""
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'lingomeets@example.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_HOST_USER = os.environ.get('EMAIL')
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
-    EMAIL_PORT = 587
     EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 
 # Application definition
