@@ -316,6 +316,7 @@ Information on existing features can be found on [this page](/documents/features
 * Ability to connect different profiles so that users can directly "Add friend" or "Connect" with another user.
 * Ability to allow different users to privately message each other.
 * Complete automated testing to 100%.
+* Password Reset interface that successfully sends an e-mail to user to change password.
 
 
 # **Data Validation**
@@ -536,6 +537,12 @@ This project contains the following resources:
     * In Profile Dashboard for smaller screens (less than 375px), there is a right-side margin issue. 
 
     * (26/11/2022, Issue fixed) <del>The validate_age function would redirect users to a 500 page rather than simply allowing an error message to happen when redirecting user back to 'user profile'. Therefore, instead of raising a ValidationError if user age is < 18 and > 100, the method returns an empty string, which allows the user to be redirected to the 'user profile' page and registers an empty string as the age input if their input is invalid. Whilst this solved the issue of stopping an error page, the validate_age method *should* raise a ValidationError with a message for the user, therefore the developer still considers the issue an unfixed bug.</del>
+
+    * (01/12/2022) The AllAuth Password Reset does not actually send a user an e-mail with a link to change password. It does however print a backend terminal e-mail, to demonstrate a level of functionality. Code that was tried in the settings.py file of the core project was the following:
+
+        ![password-reset-error](/documents/readme_images/email%20error.jpg)
+
+    However this code still did not produce any functionality. Therefore the developer opted to remove the code, and have the variable `EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'` remain in place so that backend functionality is demonstrated and it does not cause any errors.
 
 # **Development and deployment**
 
