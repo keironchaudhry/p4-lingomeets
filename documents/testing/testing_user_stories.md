@@ -51,6 +51,8 @@
     ![review-success](/documents/readme_images/review%20being%20approved%20message.jpg)
     ![profile-success](/documents/readme_images/profile%20saved.jpg)
     ![profile-fail](/documents/readme_images/error%20message.jpg)
+    ![register-message](/documents/readme_images/registered%20message.jpg)
+    ![deregister-message](/documents/readme_images/not%20registered%20message.jpg)
     * Past events are continuously paginated as they grow in number.
     ![next-pagination](/documents/readme_images/next%20button.jpg)
     ![back-pagination](/documents/readme_images/back%20button.jpg)
