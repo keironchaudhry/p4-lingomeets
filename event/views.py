@@ -153,10 +153,18 @@ class AttendeeRegistration(View):
             event.attendees.remove(
                 request.user
             )
+            messages.info(
+                    request,
+                    'You are no longer registered to this event.'
+                )
         else:
             event.attendees.add(
                 request.user
             )
+            messages.success(
+                    request,
+                    'You have successfully registered to this event.'
+                )
 
         return HttpResponseRedirect(
             reverse(
