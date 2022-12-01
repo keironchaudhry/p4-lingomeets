@@ -542,7 +542,7 @@ This project contains the following resources:
 
         ![password-reset-error](/documents/readme_images/email%20error.jpg)
 
-    However this code still did not produce any functionality. Therefore the developer opted to remove the code, and have the variable `EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'` remain in place so that backend functionality is demonstrated and it does not cause any errors.
+        However this code still did not produce any functionality. Therefore the developer opted to remove the code, and have the variable `EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'` remain in place so that backend functionality is demonstrated and it does not cause any errors.
 
 # **Development and deployment**
 
